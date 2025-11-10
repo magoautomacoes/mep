@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { Check, FileText, Smartphone, TrendingUp, Users, Shield, Sparkles } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Check, FileText, Smartphone, TrendingUp, Users, Sparkles } from "lucide-react";
 import { HeroWithAurora } from "@/components/HeroWithAurora";
-import { BeforeAfterCompare } from "@/components/ui/before-after-compare";
+// before-after-compare import removido após consolidar a demonstração
 import Footer from "@/components/ui/footer";
+// TestimonialsSection import removido; mantendo apenas TestimonialsCarousel
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import FAQs from "@/components/ui/faqs";
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
@@ -19,6 +21,27 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Hero Section with Aurora Background */}
       <HeroWithAurora onCTAClick={scrollToCTA} />
+
+      {/* Hero Video Demonstration */}
+      <section className="py-10 sm:py-12 md:py-14 bg-muted/30">
+        <div className="section-container">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <div className="card-premium border border-border overflow-hidden">
+              <video
+                className="w-full h-auto"
+                src="https://s3.magoautomacoes.com.br/desing/video%20demonstrativo%20app.mp4"
+                controls
+                muted
+                playsInline
+                aria-label="Vídeo demonstrativo: experiência premium do app"
+              />
+            </div>
+            <div className="text-xs md:text-sm text-muted-foreground mt-3 text-center">
+              Veja rapidamente a diferença visual e de experiência entre PDF e app.
+            </div>
+          </div>
+        </div>
+      </section>
 
 
       {/* O problema */}
@@ -39,10 +62,10 @@ const Index = () => {
           <div className="max-w-3xl mx-auto text-center px-4 sm:px-6 md:px-8 space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4">A solução</h2>
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-              Com o MEP — Método Ebook Premium, você entrega seu conteúdo como app interativo: navegação intuitiva, design premium, leitura fluida e marca forte — com gamificação, rede social interna, ranking e notificações. Sem código. Sem fricção. Só copiar e colar.
+              Com o MEP — Método Ebook Premium, você entrega seu conteúdo como app interativo: navegação intuitiva, design premium, leitura fluida e marca forte — com gamificação, rede social interna, ranking e notificações. Sem fricção, sem necessidade de programação.
             </p>
             <div className="mt-4">
-              <Button variant="premium" size="xl" onClick={scrollToCTA}>Criar meu Ebook Premium</Button>
+              <Button variant="premium" size="xl" onClick={scrollToCTA}>Transformar meu e-book agora</Button>
             </div>
           </div>
         </div>
@@ -70,23 +93,11 @@ const Index = () => {
               <ul className="space-y-4 md:space-y-5 text-sm md:text-base text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 flex-shrink-0">•</span>
-                  <span>Experiência genérica</span>
+                  <span>PDF genérico, baixo valor percebido</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 flex-shrink-0">•</span>
-                  <span>Baixo valor percebido</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 flex-shrink-0">•</span>
-                  <span>Pouco tempo de tela</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 flex-shrink-0">•</span>
-                  <span>Cliente não engaja</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 flex-shrink-0">•</span>
-                  <span>Vira arquivo esquecido</span>
+                  <span>PDF não engaja</span>
                 </li>
               </ul>
             </div>
@@ -101,23 +112,11 @@ const Index = () => {
               <ul className="space-y-4 md:space-y-5 text-sm md:text-base text-primary-foreground/90">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span>Interface moderna e interativa</span>
+                  <span>App com experiência premium, alto valor percebido</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span>Alto valor percebido</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span>Mais tempo de leitura</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span>Cliente engajado do início ao fim</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span>Marca forte e profissional</span>
+                  <span>App engaja o cliente e reduz reembolsos</span>
                 </li>
               </ul>
             </div>
@@ -125,100 +124,46 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Comparação Antes/Depois */}
+      
+
+      {/* Benefícios em Bento Grid */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32">
         <div className="section-container">
           <div className="text-center mb-10 sm:mb-12 md:mb-16 px-4 sm:px-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3 md:mb-4">
-              <LineShadowText shadowColor="hsl(var(--soft-blue))">Compare</LineShadowText> antes e depois
-            </h2>
-            <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
-              Compare na prática: arraste o controle para ver a diferença entre um PDF comum e a experiência premium em formato de app.
-            </p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold">Benefícios</h2>
+            <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">Mais engajamento, maior valor percebido, autoridade de especialista e menos reembolsos.</p>
           </div>
-          <div className="max-w-5xl mx-auto px-4 sm:px-6">
-            <div className="flex justify-center">
-              <BeforeAfterCompare
-                beforeSrc="https://s3.magoautomacoes.com.br/desing/video%20demonstrativo%20sem%20app.mp4"
-                afterSrc="https://s3.magoautomacoes.com.br/desing/video%20demonstrativo%20app.mp4"
-                beforeLabel="Antes (PDF)"
-                afterLabel="Depois (App)"
-                initialPosition={0.5}
-                beforeIsVideo
-                afterIsVideo
-                className="mx-auto"
-                containerClassName="aspect-[9/16] w-full max-w-[360px] sm:max-w-[420px] md:max-w-[480px] lg:max-w-[540px]"
-              />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10 max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="card-premium p-6">
+              <div className="text-lg font-display font-semibold mb-2">Engajamento</div>
+              <p className="text-sm md:text-base text-muted-foreground">Navegação fluida, gamificação e notificações mantêm o leitor ativo.</p>
+              <div className="text-xs md:text-sm opacity-70 mt-3">“Aumento claro de engajamento.” — Pedro Santos</div>
+            </div>
+            <div className="card-premium p-6">
+              <div className="text-lg font-display font-semibold mb-2">Valor percebido</div>
+              <p className="text-sm md:text-base text-muted-foreground">Experiência premium justifica preço e eleva a percepção.</p>
+              <div className="text-xs md:text-sm opacity-70 mt-3">“Valor percebido elevou imediatamente.” — Bruna Lima</div>
+            </div>
+            <div className="card-premium p-6">
+              <div className="text-lg font-display font-semibold mb-2">Autoridade</div>
+              <p className="text-sm md:text-base text-muted-foreground">Visual profissional reforça sua posição como especialista.</p>
+              <div className="text-xs md:text-sm opacity-70 mt-3">“Muito mais profissional.” — Rafael Gomes</div>
+            </div>
+            <div className="card-premium p-6">
+              <div className="text-lg font-display font-semibold mb-2">Menos reembolsos</div>
+              <p className="text-sm md:text-base text-muted-foreground">Entrega superior melhora satisfação e reduz pedidos de reembolso.</p>
+              <div className="text-xs md:text-sm opacity-70 mt-3">“Clientes elogiaram o novo formato.” — Isabela Martins</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* O que você recebe (stack de valor) */}
-      <section className="py-16 sm:py-20 md:py-28 lg:py-32">
-        <div className="section-container">
-          <div className="text-center mb-10 sm:mb-12 md:mb-16 px-4 sm:px-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3 md:mb-4">
-              O que você recebe
-            </h2>
-          </div>
-          <div className="max-w-4xl mx-auto px-4 sm:px-6">
-            <ul className="space-y-4 md:space-y-5 text-sm md:text-base text-muted-foreground">
-              <li className="flex items-start gap-3"><Sparkles className="w-5 h-5 text-accent mt-0.5" /><span><span className="font-medium">Template pronto</span> — Interface completa e profissional, pronta para usar.</span></li>
-              <li className="flex items-start gap-3"><TrendingUp className="w-5 h-5 text-accent mt-0.5" /><span><span className="font-medium">Passo a passo <AnimatedShinyText shimmerWidth={120} className="bg-gradient-to-r from-transparent via-[hsl(var(--accent))] to-transparent">simples</AnimatedShinyText></span> — Sem necessidade de programação.</span></li>
-              <li className="flex items-start gap-3"><Smartphone className="w-5 h-5 text-accent mt-0.5" /><span><span className="font-medium">Design <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]} className="bg-clip-text text-transparent">premium</AuroraText> personalizável</span> — Cores, tipografia e branding da sua marca.</span></li>
-              <li className="flex items-start gap-3"><FileText className="w-5 h-5 text-accent mt-0.5" /><span><span className="font-medium">Guias de implementação</span> — Onboarding rápido, checklist e melhores práticas.</span></li>
-              <li className="flex items-start gap-3"><Users className="w-5 h-5 text-accent mt-0.5" /><span><span className="font-medium">Suporte na implementação</span> — Acompanhamento para dúvidas e ajustes.</span></li>
-            </ul>
+      {/* Depoimentos (colunas shadcn) */}
+      <TestimonialsSection />
 
-            <div className="grid sm:grid-cols-2 gap-4 md:gap-6 lg:gap-8 mt-8">
-              <div className="card-premium border border-border text-center">
-                <div className="text-sm md:text-base font-medium">Bônus 1</div>
-                <div className="text-sm md:text-base text-muted-foreground">Pacote de telas e ícones (valor percebido R$197)</div>
-              </div>
-              <div className="card-premium border border-border text-center">
-                <div className="text-sm md:text-base font-medium">Bônus 2</div>
-                <div className="text-sm md:text-base text-muted-foreground">Checklist de conversão para ebooks (valor percebido R$97)</div>
-              </div>
-            </div>
+      
 
-            <div className="text-center mt-8">
-              <Button variant="premium" size="xl" onClick={scrollToCTA}>Quero meu template premium</Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Por que funciona */}
-      <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-primary text-primary-foreground">
-        <div className="section-container">
-          <div className="max-w-4xl mx-auto text-center px-4 sm:px-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4 md:mb-6 leading-tight">
-              O seu cliente valoriza <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]} className="bg-clip-text text-transparent">experiência</AuroraText>, não arquivo.
-            </h2>
-            
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12 mt-10 md:mt-12">
-              <div className="px-4">
-                <div className="text-4xl md:text-5xl font-display font-bold text-accent mb-3 md:mb-4">01</div>
-                <h3 className="text-lg md:text-xl font-display font-semibold mb-2 md:mb-3">Engaja mais</h3>
-                <p className="text-sm md:text-base text-primary-foreground/80 leading-relaxed">App com navegação intuitiva, gamificação e notificações mantém o leitor focado e reduz abandono.</p>
-              </div>
-
-              <div className="px-4">
-                <div className="text-4xl md:text-5xl font-display font-bold text-accent mb-3 md:mb-4">02</div>
-                <h3 className="text-lg md:text-xl font-display font-semibold mb-2 md:mb-3">Aumenta o valor</h3>
-                <p className="text-sm md:text-base text-primary-foreground/80 leading-relaxed">A experiência premium justifica preço maior e reforça sua autoridade.</p>
-              </div>
-
-              <div className="px-4 sm:col-span-2 lg:col-span-1">
-                <div className="text-4xl md:text-5xl font-display font-bold text-accent mb-3 md:mb-4">03</div>
-                <h3 className="text-lg md:text-xl font-display font-semibold mb-2 md:mb-3">Reduz reembolsos</h3>
-                <p className="text-sm md:text-base text-primary-foreground/80 leading-relaxed">Entrega superior = cliente satisfeito e menos pedidos de reembolso.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Para quem é */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32">
@@ -257,12 +202,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Depoimentos / Provas Sociais */}
-      <section className="py-16 sm:py-20 md:py-28 lg:py-32">
-        <div className="section-container">
-          <TestimonialsSection />
-        </div>
-      </section>
+      
 
       {/* Offer Section */}
       <section id="offer" className="py-16 sm:py-20 md:py-28 lg:py-32 bg-muted/30">
@@ -279,16 +219,20 @@ const Index = () => {
               
               <div className="mb-8">
                 <div className="text-xl md:text-2xl text-muted-foreground line-through mb-2">
-                  R$ 97
+                  R$ 97,00
                 </div>
                 <div className="mb-2">
                   <AnimatedShinyText className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-primary">
-                    R$ 47
+                    R$ 47,00
                   </AnimatedShinyText>
                 </div>
-                <div className="text-sm md:text-base text-muted-foreground px-2">
-                  Acesso vitalício ao método completo
-                </div>
+              <div className="text-sm md:text-base text-muted-foreground px-2">
+                Acesso vitalício ao método completo
+              </div>
+
+              <div className="mt-4 flex justify-center">
+                <Badge variant="outline" className="px-3 py-1 rounded-full">Satisfação ou reembolso 100%</Badge>
+              </div>
               </div>
 
               {/* CTA principal movida para a base do card */}
@@ -316,8 +260,8 @@ const Index = () => {
                 </div>
               </div>
               
-              <Button variant="premium" size="xl" className="w-full max-w-md mx-auto">
-                Quero transformar meu ebook
+              <Button variant="premium" size="xl" className="w-full max-w-md mx-auto" aria-label="Transformar meu e-book agora">
+                Transformar meu e-book agora
               </Button>
               <div className="text-xs md:text-sm text-muted-foreground mt-3">Pagamento único. Acesso imediato.</div>
             </div>
@@ -325,16 +269,14 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Garantia */}
-      <section className="py-16 sm:py-20 md:py-28 lg:py-32">
+      {/* FAQ (posicionado abaixo da oferta) */}
+      <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-muted/30">
         <div className="section-container">
-          <div className="max-w-3xl mx-auto text-center px-4 sm:px-6">
-            <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-accent/20 mb-5 md:mb-6">
-              <Shield className="w-8 h-8 md:w-10 md:h-10 text-accent" />
-            </div>
-            
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4 md:mb-5">Garantia incondicional</h2>
-            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">Aplique o método e, se não conseguir criar seu app premium, devolvemos 100% do seu investimento. Sem perguntas, sem complicação.</p>
+          <div className="text-center mb-10 md:mb-12 px-4 sm:px-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">FAQ</h2>
+          </div>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <FAQs />
           </div>
         </div>
       </section>
@@ -353,7 +295,7 @@ const Index = () => {
             </div>
             <div className="card-premium text-center">
               <div className="text-3xl font-display font-bold text-accent mb-2">02</div>
-              <div className="text-sm md:text-base font-medium mb-1">Copy & Paste</div>
+              <div className="text-sm md:text-base font-medium mb-1">Personalize o conteúdo</div>
               <div className="text-xs md:text-sm text-muted-foreground">Copie seu conteúdo e assets. Personalize cores e fontes.</div>
             </div>
             <div className="card-premium text-center">
@@ -363,22 +305,12 @@ const Index = () => {
             </div>
           </div>
           <div className="text-center mt-8">
-            <Button variant="premium" size="xl" onClick={scrollToCTA}>Quero começar agora</Button>
+            <Button variant="premium" size="xl" onClick={scrollToCTA}>Transformar meu e-book agora</Button>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-muted/30">
-        <div className="section-container">
-          <div className="text-center mb-10 md:mb-12 px-4 sm:px-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">FAQ</h2>
-          </div>
-          <div className="max-w-4xl mx-auto px-4 sm:px-6">
-            <FAQs />
-          </div>
-        </div>
-      </section>
+      
 
       {/* Final CTA Section */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-primary text-primary-foreground text-center">
@@ -396,9 +328,11 @@ const Index = () => {
             <Button 
               onClick={scrollToCTA}
               className="btn-champagne w-full sm:w-auto"
+              aria-label="Quero meu app premium agora"
             >
-              Quero minha versão premium
+              Quero meu app premium agora
             </Button>
+            <div className="text-sm md:text-base text-primary-foreground/80 mt-4">Eleve o valor do seu e-book com um app premium em minutos.</div>
           </div>
         </div>
       </section>

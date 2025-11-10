@@ -38,17 +38,21 @@ export const HeroWithAurora = ({ onCTAClick }: HeroWithAuroraProps) => {
           Torne-se <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]} className="bg-clip-text text-transparent">premium</AuroraText> entregando um app.
         </p>
 
+        <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-3 md:mb-4 max-w-2xl mx-auto text-center px-4 leading-relaxed">
+          PDFs são esquecidos e desvalorizados; apps engajam e valorizam seu conteúdo.
+        </p>
+
         <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 md:mb-10 max-w-2xl mx-auto text-center px-4 leading-relaxed">
           Transforme seu ebook em um aplicativo moderno, com visual profissional e experiência de leitura premium.
         </p>
 
         <div className="flex flex-col items-center gap-3 w-full max-w-md px-4">
-          <Button onClick={onCTAClick} variant="premium" size="lg" className="w-full sm:w-auto">
-            Quero criar meu Ebook Premium
+          <Button onClick={onCTAClick} aria-label="Transformar meu e-book agora" variant="premium" size="lg" className="w-full sm:w-auto">
+            Transformar meu e-book agora
           </Button>
 
           <p className="text-xs sm:text-sm text-muted-foreground text-center">
-            Não precisa programar. Método Copy & Paste.
+            Mesmo se você não souber programar, basta copiar e colar.
           </p>
         </div>
       </motion.div>
