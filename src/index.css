@@ -8,51 +8,58 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Premium Brand Colors */
+    --background: 40 25% 96%;
+    --foreground: 215 73% 19%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 40 25% 96%;
+    --card-foreground: 215 73% 19%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 25% 96%;
+    --popover-foreground: 215 73% 19%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 215 73% 19%;
+    --primary-foreground: 40 25% 96%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 211 64% 24%;
+    --secondary-foreground: 40 25% 96%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 39 20% 88%;
+    --muted-foreground: 215 40% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 39 27% 76%;
+    --accent-foreground: 215 73% 19%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 40 25% 96%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 39 20% 88%;
+    --input: 39 20% 88%;
+    --ring: 215 73% 19%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Premium Design Tokens */
+    --champagne: 39 27% 76%;
+    --deep-blue: 215 73% 19%;
+    --soft-blue: 211 64% 24%;
+    --off-white: 40 25% 96%;
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Shadows */
+    --shadow-subtle: 0 2px 8px rgba(11, 42, 83, 0.06);
+    --shadow-premium: 0 8px 24px rgba(11, 42, 83, 0.08);
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 40 25% 96%;
+    --sidebar-foreground: 215 73% 19%;
+    --sidebar-primary: 215 73% 19%;
+    --sidebar-primary-foreground: 40 25% 96%;
+    --sidebar-accent: 39 27% 76%;
+    --sidebar-accent-foreground: 215 73% 19%;
+    --sidebar-border: 39 20% 88%;
+    --sidebar-ring: 215 73% 19%;
   }
 
   .dark {
@@ -100,6 +107,28 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 md:px-12 lg:px-16;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-secondary transition-all duration-300 shadow-lg hover:shadow-xl px-8 py-4 rounded-full font-medium text-lg;
+  }
+
+  .btn-champagne {
+    @apply bg-accent text-accent-foreground hover:bg-accent/80 transition-all duration-300 shadow-md hover:shadow-lg px-8 py-4 rounded-full font-medium text-lg;
+  }
+
+  .card-premium {
+    @apply bg-card rounded-2xl p-8 shadow-subtle hover:shadow-premium transition-all duration-300;
   }
 }
