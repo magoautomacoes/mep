@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { AuroraBackground } from "@/components/ui/aurora-background";
+import { AuroraText } from "@/components/ui/aurora-text";
 
 interface HeroWithAuroraProps {
   onCTAClick: () => void;
@@ -34,7 +35,7 @@ export const HeroWithAurora = ({ onCTAClick }: HeroWithAuroraProps) => {
         </h1>
 
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-display mb-3 md:mb-4 text-secondary text-center px-2">
-          Torne-se premium entregando um app.
+          Torne-se <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]} className="bg-clip-text text-transparent">premium</AuroraText> entregando um app.
         </p>
 
         <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 md:mb-10 max-w-2xl mx-auto text-center px-4 leading-relaxed">

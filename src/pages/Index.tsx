@@ -3,7 +3,11 @@ import { Check, FileText, Smartphone, TrendingUp, Users, Shield, Sparkles } from
 import { HeroWithAurora } from "@/components/HeroWithAurora";
 import { BeforeAfterCompare } from "@/components/ui/before-after-compare";
 import Footer from "@/components/ui/footer";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
 import FAQs from "@/components/ui/faqs";
+import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
+import { AuroraText } from "@/components/ui/aurora-text";
+import { LineShadowText } from "@/components/ui/line-shadow-text";
 
 const Index = () => {
   const scrollToCTA = () => {
@@ -16,21 +20,11 @@ const Index = () => {
       {/* Hero Section with Aurora Background */}
       <HeroWithAurora onCTAClick={scrollToCTA} />
 
-      {/* Trust Bar */}
-      <section className="py-4 bg-muted/20 border-t border-b">
-        <div className="section-container">
-          <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 text-xs md:text-sm text-muted-foreground px-4">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-background border">+1.000 alunos</span>
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-background border">★★★★★ 4,9/5</span>
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-background border">Suporte em português</span>
-          </div>
-        </div>
-      </section>
 
       {/* O problema */}
       <section className="py-16 sm:py-20 md:py-24">
         <div className="section-container">
-          <div className="max-w-3xl mx-auto text-center px-4">
+          <div className="max-w-3xl mx-auto text-center px-4 sm:px-6 md:px-8 space-y-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4">O problema</h2>
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
               Seu ebook não deveria ser “só um PDF”. PDFs comuns parecem genéricos, têm baixo valor percebido e ficam esquecidos na pasta de downloads. Resultado: menos engajamento, mais reembolsos e ticket estagnado.
@@ -42,12 +36,14 @@ const Index = () => {
       {/* A solução */}
       <section className="py-16 sm:py-20 md:py-24 bg-muted/30">
         <div className="section-container">
-          <div className="max-w-3xl mx-auto text-center px-4">
+          <div className="max-w-3xl mx-auto text-center px-4 sm:px-6 md:px-8 space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4">A solução</h2>
-            <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
-              Com o MEP — Método Ebook Premium, você entrega seu conteúdo como app interativo: navegação intuitiva, design premium, leitura fluida e marca forte. Sem código. Sem fricção. Só copiar e colar.
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+              Com o MEP — Método Ebook Premium, você entrega seu conteúdo como app interativo: navegação intuitiva, design premium, leitura fluida e marca forte — com gamificação, rede social interna, ranking e notificações. Sem código. Sem fricção. Só copiar e colar.
             </p>
-            <Button variant="premium" size="xl" onClick={scrollToCTA}>Criar meu Ebook Premium</Button>
+            <div className="mt-4">
+              <Button variant="premium" size="xl" onClick={scrollToCTA}>Criar meu Ebook Premium</Button>
+            </div>
           </div>
         </div>
       </section>
@@ -55,14 +51,15 @@ const Index = () => {
       {/* Before x After Section */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-muted/30">
         <div className="section-container">
-          <div className="text-center mb-12 md:mb-16 px-4">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16 px-4 sm:px-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3 md:mb-4 leading-tight">
               De PDF esquecido para<br className="hidden sm:inline" />
-              <span className="sm:hidden"> </span>experiência premium.
+              <span className="sm:hidden"> </span>
+              <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]} className="tracking-tight">experiência premium.</AuroraText>
             </h2>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 max-w-6xl mx-auto px-4 sm:px-6">
             {/* Before */}
             <div className="card-premium border-2 border-border h-full">
               <div className="flex items-center gap-3 mb-5 md:mb-6">
@@ -70,7 +67,7 @@ const Index = () => {
                 <span className="text-xs md:text-sm font-medium text-muted-foreground tracking-wide">ANTES</span>
               </div>
               <h3 className="text-xl md:text-2xl font-display font-semibold mb-4 md:mb-5">PDF comum</h3>
-              <ul className="space-y-3 text-sm md:text-base text-muted-foreground">
+              <ul className="space-y-4 md:space-y-5 text-sm md:text-base text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 flex-shrink-0">•</span>
                   <span>Experiência genérica</span>
@@ -101,7 +98,7 @@ const Index = () => {
                 <span className="text-xs md:text-sm font-medium text-accent tracking-wide">DEPOIS</span>
               </div>
               <h3 className="text-xl md:text-2xl font-display font-semibold mb-4 md:mb-5">App premium</h3>
-              <ul className="space-y-3 text-sm md:text-base text-primary-foreground/90">
+              <ul className="space-y-4 md:space-y-5 text-sm md:text-base text-primary-foreground/90">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
                   <span>Interface moderna e interativa</span>
@@ -131,15 +128,15 @@ const Index = () => {
       {/* Comparação Antes/Depois */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32">
         <div className="section-container">
-          <div className="text-center mb-12 md:mb-16 px-4">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16 px-4 sm:px-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3 md:mb-4">
-              Compare antes e depois
+              <LineShadowText shadowColor="hsl(var(--soft-blue))">Compare</LineShadowText> antes e depois
             </h2>
             <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
               Compare na prática: arraste o controle para ver a diferença entre um PDF comum e a experiência premium em formato de app.
             </p>
           </div>
-          <div className="max-w-5xl mx-auto px-4">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6">
             <div className="flex justify-center">
               <BeforeAfterCompare
                 beforeSrc="https://s3.magoautomacoes.com.br/desing/video%20demonstrativo%20sem%20app.mp4"
@@ -150,7 +147,7 @@ const Index = () => {
                 beforeIsVideo
                 afterIsVideo
                 className="mx-auto"
-                containerClassName="aspect-[9/16] w-full max-w-[360px] sm:max-w-[420px] md:max-w-[480px]"
+                containerClassName="aspect-[9/16] w-full max-w-[360px] sm:max-w-[420px] md:max-w-[480px] lg:max-w-[540px]"
               />
             </div>
           </div>
@@ -160,26 +157,26 @@ const Index = () => {
       {/* O que você recebe (stack de valor) */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32">
         <div className="section-container">
-          <div className="text-center mb-12 md:mb-16 px-4">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16 px-4 sm:px-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3 md:mb-4">
               O que você recebe
             </h2>
           </div>
-          <div className="max-w-4xl mx-auto px-4">
-            <ul className="space-y-3 md:space-y-4 text-sm md:text-base text-muted-foreground">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <ul className="space-y-4 md:space-y-5 text-sm md:text-base text-muted-foreground">
               <li className="flex items-start gap-3"><Sparkles className="w-5 h-5 text-accent mt-0.5" /><span><span className="font-medium">Template pronto</span> — Interface completa e profissional, pronta para usar.</span></li>
-              <li className="flex items-start gap-3"><TrendingUp className="w-5 h-5 text-accent mt-0.5" /><span><span className="font-medium">Método Copy & Paste</span> — Passo a passo simples, sem necessidade de programação.</span></li>
-              <li className="flex items-start gap-3"><Smartphone className="w-5 h-5 text-accent mt-0.5" /><span><span className="font-medium">Design premium personalizável</span> — Cores, tipografia e branding da sua marca.</span></li>
+              <li className="flex items-start gap-3"><TrendingUp className="w-5 h-5 text-accent mt-0.5" /><span><span className="font-medium">Passo a passo <AnimatedShinyText shimmerWidth={120} className="bg-gradient-to-r from-transparent via-[hsl(var(--accent))] to-transparent">simples</AnimatedShinyText></span> — Sem necessidade de programação.</span></li>
+              <li className="flex items-start gap-3"><Smartphone className="w-5 h-5 text-accent mt-0.5" /><span><span className="font-medium">Design <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]} className="bg-clip-text text-transparent">premium</AuroraText> personalizável</span> — Cores, tipografia e branding da sua marca.</span></li>
               <li className="flex items-start gap-3"><FileText className="w-5 h-5 text-accent mt-0.5" /><span><span className="font-medium">Guias de implementação</span> — Onboarding rápido, checklist e melhores práticas.</span></li>
               <li className="flex items-start gap-3"><Users className="w-5 h-5 text-accent mt-0.5" /><span><span className="font-medium">Suporte na implementação</span> — Acompanhamento para dúvidas e ajustes.</span></li>
             </ul>
 
-            <div className="grid sm:grid-cols-2 gap-4 md:gap-6 mt-8">
-              <div className="card-premium border border-border p-4 text-center">
+            <div className="grid sm:grid-cols-2 gap-4 md:gap-6 lg:gap-8 mt-8">
+              <div className="card-premium border border-border text-center">
                 <div className="text-sm md:text-base font-medium">Bônus 1</div>
                 <div className="text-sm md:text-base text-muted-foreground">Pacote de telas e ícones (valor percebido R$197)</div>
               </div>
-              <div className="card-premium border border-border p-4 text-center">
+              <div className="card-premium border border-border text-center">
                 <div className="text-sm md:text-base font-medium">Bônus 2</div>
                 <div className="text-sm md:text-base text-muted-foreground">Checklist de conversão para ebooks (valor percebido R$97)</div>
               </div>
@@ -195,16 +192,16 @@ const Index = () => {
       {/* Por que funciona */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-primary text-primary-foreground">
         <div className="section-container">
-          <div className="max-w-4xl mx-auto text-center px-4">
+          <div className="max-w-4xl mx-auto text-center px-4 sm:px-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4 md:mb-6 leading-tight">
-              O seu cliente valoriza experiência, não arquivo.
+              O seu cliente valoriza <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]} className="bg-clip-text text-transparent">experiência</AuroraText>, não arquivo.
             </h2>
             
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12 mt-12 md:mt-16">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12 mt-10 md:mt-12">
               <div className="px-4">
                 <div className="text-4xl md:text-5xl font-display font-bold text-accent mb-3 md:mb-4">01</div>
                 <h3 className="text-lg md:text-xl font-display font-semibold mb-2 md:mb-3">Engaja mais</h3>
-                <p className="text-sm md:text-base text-primary-foreground/80 leading-relaxed">App com navegação intuitiva mantém o leitor focado e reduz abandono.</p>
+                <p className="text-sm md:text-base text-primary-foreground/80 leading-relaxed">App com navegação intuitiva, gamificação e notificações mantém o leitor focado e reduz abandono.</p>
               </div>
 
               <div className="px-4">
@@ -226,13 +223,13 @@ const Index = () => {
       {/* Para quem é */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32">
         <div className="section-container">
-          <div className="text-center mb-12 md:mb-16 px-4">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16 px-4 sm:px-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3 md:mb-4">
               Este método é para você que:
             </h2>
           </div>
           
-          <div className="max-w-4xl mx-auto space-y-4 md:space-y-6 px-4">
+          <div className="max-w-4xl mx-auto space-y-4 md:space-y-6 px-4 sm:px-6">
             <div className="card-premium flex items-start gap-3 md:gap-4">
               <Users className="w-6 h-6 md:w-7 md:h-7 text-accent flex-shrink-0 mt-1" />
               <div>
@@ -260,7 +257,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section removida conforme instrução */}
+      {/* Depoimentos / Provas Sociais */}
+      <section className="py-16 sm:py-20 md:py-28 lg:py-32">
+        <div className="section-container">
+          <TestimonialsSection />
+        </div>
+      </section>
 
       {/* Offer Section */}
       <section id="offer" className="py-16 sm:py-20 md:py-28 lg:py-32 bg-muted/30">
@@ -272,15 +274,17 @@ const Index = () => {
               </div>
               
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-6 px-2">
-                Transforme seu ebook hoje
+                Transforme seu <LineShadowText shadowColor="hsl(var(--accent))">ebook</LineShadowText> hoje
               </h2>
               
               <div className="mb-8">
                 <div className="text-xl md:text-2xl text-muted-foreground line-through mb-2">
                   R$ 97
                 </div>
-                <div className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-primary mb-2">
-                  R$ 47
+                <div className="mb-2">
+                  <AnimatedShinyText className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-primary">
+                    R$ 47
+                  </AnimatedShinyText>
                 </div>
                 <div className="text-sm md:text-base text-muted-foreground px-2">
                   Acesso vitalício ao método completo
@@ -289,7 +293,7 @@ const Index = () => {
 
               {/* CTA principal movida para a base do card */}
 
-              <div className="space-y-3 md:space-y-4 mb-8 md:mb-10 text-left max-w-md mx-auto px-2">
+              <div className="space-y-4 md:space-y-5 mb-8 md:mb-10 text-left max-w-md mx-auto px-2">
                 <div className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
                   <span className="text-sm md:text-base">Template completo pronto para usar</span>
@@ -324,7 +328,7 @@ const Index = () => {
       {/* Garantia */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32">
         <div className="section-container">
-          <div className="max-w-3xl mx-auto text-center px-4">
+          <div className="max-w-3xl mx-auto text-center px-4 sm:px-6">
             <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-accent/20 mb-5 md:mb-6">
               <Shield className="w-8 h-8 md:w-10 md:h-10 text-accent" />
             </div>
@@ -338,21 +342,21 @@ const Index = () => {
       {/* Como funciona (3 passos) */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32">
         <div className="section-container">
-          <div className="text-center mb-10 md:mb-12 px-4">
+          <div className="text-center mb-10 md:mb-12 px-4 sm:px-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">Como funciona</h2>
           </div>
-          <div className="max-w-4xl mx-auto grid sm:grid-cols-3 gap-6 md:gap-8 px-4">
-            <div className="card-premium p-4 text-center">
+          <div className="max-w-4xl mx-auto grid sm:grid-cols-3 gap-6 md:gap-8 lg:gap-10 px-4 sm:px-6">
+            <div className="card-premium text-center">
               <div className="text-3xl font-display font-bold text-accent mb-2">01</div>
               <div className="text-sm md:text-base font-medium mb-1">Importe o template</div>
               <div className="text-xs md:text-sm text-muted-foreground">Baixe o projeto e abra no ambiente indicado.</div>
             </div>
-            <div className="card-premium p-4 text-center">
+            <div className="card-premium text-center">
               <div className="text-3xl font-display font-bold text-accent mb-2">02</div>
               <div className="text-sm md:text-base font-medium mb-1">Copy & Paste</div>
               <div className="text-xs md:text-sm text-muted-foreground">Copie seu conteúdo e assets. Personalize cores e fontes.</div>
             </div>
-            <div className="card-premium p-4 text-center">
+            <div className="card-premium text-center">
               <div className="text-3xl font-display font-bold text-accent mb-2">03</div>
               <div className="text-sm md:text-base font-medium mb-1">Publicação</div>
               <div className="text-xs md:text-sm text-muted-foreground">Gere seu app e entregue ao cliente (web/app). Suporte acompanha.</div>
@@ -367,10 +371,10 @@ const Index = () => {
       {/* FAQ */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-muted/30">
         <div className="section-container">
-          <div className="text-center mb-10 md:mb-12 px-4">
+          <div className="text-center mb-10 md:mb-12 px-4 sm:px-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">FAQ</h2>
           </div>
-          <div className="max-w-4xl mx-auto px-4">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <FAQs />
           </div>
         </div>
@@ -379,14 +383,14 @@ const Index = () => {
       {/* Final CTA Section */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-primary text-primary-foreground text-center">
         <div className="section-container">
-          <div className="max-w-3xl mx-auto px-4">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
             <div className="text-accent text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-5 md:mb-6">
               MEP
             </div>
             
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 md:mb-8 leading-tight">
               Comece agora.<br className="hidden sm:inline" />
-              <span className="sm:hidden"> </span>Seu ebook merece ser premium.
+              <span className="sm:hidden"> </span>Seu ebook merece ser <AnimatedShinyText shimmerWidth={140} className="text-primary-foreground bg-gradient-to-r from-transparent via-white/70 to-transparent">premium</AnimatedShinyText>.
             </h2>
             
             <Button 

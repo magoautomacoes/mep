@@ -128,7 +128,73 @@ All colors MUST be HSL.
     @apply bg-accent text-accent-foreground hover:bg-accent/80 transition-all duration-300 shadow-md hover:shadow-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-base sm:text-lg;
   }
 
-  .card-premium {
-    @apply bg-card rounded-xl md:rounded-2xl p-6 md:p-8 shadow-subtle hover:shadow-premium transition-all duration-300;
+.card-premium {
+  @apply bg-card rounded-xl md:rounded-2xl p-6 md:p-8 shadow-subtle hover:shadow-premium transition-all duration-300;
+}
+}
+
+/* MCP text animations utilities */
+@keyframes shiny-text-sweep {
+  0% {
+    background-position: -200% 0;
   }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shiny-text {
+  animation-name: shiny-text-sweep;
+  animation-duration: 2.5s;
+  animation-timing-function: cubic-bezier(.6, .6, 0, 1);
+  animation-iteration-count: infinite;
+}
+
+@keyframes aurora-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-aurora {
+  animation-name: aurora-shift;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* Line shadow text effect */
+@keyframes line-shadow-move {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 0; }
+}
+
+.line-shadow-text {
+  position: relative;
+  display: inline-flex;
+}
+
+.line-shadow-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0.04em;
+  left: 0.04em;
+  z-index: -1;
+  background-image: linear-gradient(
+    45deg,
+    transparent 45%,
+    var(--shadow-color) 45%,
+    var(--shadow-color) 55%,
+    transparent 0
+  );
+  background-size: 0.06em 0.06em;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: line-shadow-move 2.5s linear infinite;
 }

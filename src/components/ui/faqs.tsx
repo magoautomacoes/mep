@@ -61,13 +61,13 @@ export default function FAQs({ items, className }: FAQsProps) {
 
   return (
     <div className={className}>
-      <Accordion type="single" collapsible className="w-full">
+      <Accordion type="single" collapsible className="w-full space-y-2 md:space-y-3">
         {faqItems.map((item) => (
-          <AccordionItem key={item.id} value={item.id} className="last:border-b-0">
-            <AccordionTrigger className="text-base md:text-lg font-display font-semibold tracking-tight text-foreground py-3 hover:no-underline">
+          <AccordionItem key={item.id} value={item.id} className="last:border-b-0 py-1.5 md:py-2.5">
+            <AccordionTrigger className="text-base md:text-lg font-display font-semibold tracking-tight text-foreground py-3 md:py-4 hover:no-underline">
               {item.question}
             </AccordionTrigger>
-            <AccordionContent className="text-sm md:text-base text-muted-foreground leading-relaxed">
+            <AccordionContent className="text-sm md:text-base text-muted-foreground leading-relaxed pt-1.5 md:pt-2">
               <p>{item.answer}</p>
             </AccordionContent>
           </AccordionItem>
