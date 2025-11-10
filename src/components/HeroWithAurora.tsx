@@ -17,35 +17,36 @@ export const HeroWithAurora = ({ onCTAClick }: HeroWithAuroraProps) => {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="relative flex flex-col gap-4 items-center justify-center px-6"
+        className="relative flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 max-w-5xl mx-auto"
       >
-        <div className="mb-4 inline-block">
-          <div className="text-accent text-5xl md:text-6xl font-display font-bold tracking-tight">
+        <div className="mb-6 md:mb-8 inline-block text-center">
+          <div className="text-accent text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight">
             MEP
           </div>
-          <div className="text-xs md:text-sm text-muted-foreground mt-1 tracking-widest">
+          <div className="text-xs sm:text-sm text-muted-foreground mt-2 tracking-widest">
             MÉTODO EBOOK PREMIUM
           </div>
         </div>
 
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-6 leading-tight text-center text-foreground">
-          Seu ebook não vai mais<br />ser só um PDF.
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold mb-4 md:mb-6 leading-tight text-center text-foreground px-2">
+          Seu ebook não vai mais<br className="hidden sm:inline" />
+          <span className="sm:hidden"> </span>ser só um PDF.
         </h1>
 
-        <p className="text-xl md:text-2xl lg:text-3xl font-display mb-4 text-secondary text-center">
+        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-display mb-3 md:mb-4 text-secondary text-center px-2">
           Torne-se premium entregando um app.
         </p>
 
-        <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto text-center">
+        <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 md:mb-10 max-w-2xl mx-auto text-center px-4 leading-relaxed">
           Transforme seu ebook em um aplicativo moderno, com visual profissional e experiência de leitura premium.
         </p>
 
-        <div>
-          <Button onClick={onCTAClick} className="btn-primary mb-4">
+        <div className="flex flex-col items-center gap-3 w-full max-w-md px-4">
+          <Button onClick={onCTAClick} className="btn-primary w-full sm:w-auto">
             Quero criar meu Ebook Premium
           </Button>
 
-          <p className="text-sm text-muted-foreground text-center">
+          <p className="text-xs sm:text-sm text-muted-foreground text-center">
             Não precisa programar. Método Copy & Paste.
           </p>
         </div>
