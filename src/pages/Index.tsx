@@ -3,6 +3,7 @@ import { Check, FileText, Smartphone, TrendingUp, Users, Shield, Sparkles } from
 import { HeroWithAurora } from "@/components/HeroWithAurora";
 import { BeforeAfterCompare } from "@/components/ui/before-after-compare";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
+import Footer from "@/components/ui/footer";
 
 const Index = () => {
   const scrollToCTA = () => {
@@ -336,13 +337,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-6 md:py-8 border-t border-border">
-        <div className="section-container">
-          <div className="text-center text-xs md:text-sm text-muted-foreground px-4">
-            <p>© 2025 Método Ebook Premium. Todos os direitos reservados.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
