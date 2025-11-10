@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Check, FileText, Smartphone, TrendingUp, Users, Shield, Sparkles } from "lucide-react";
 import { HeroWithAurora } from "@/components/HeroWithAurora";
+import { BeforeAfterCompare } from "@/components/ui/before-after-compare";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
 
 const Index = () => {
   const scrollToCTA = () => {
@@ -76,6 +78,42 @@ const Index = () => {
                   <span>Marca forte e profissional</span>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparação Antes/Depois */}
+      <section className="py-16 sm:py-20 md:py-28 lg:py-32">
+        <div className="section-container">
+          <div className="text-center mb-12 md:mb-16 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3 md:mb-4">
+              Compare antes e depois
+            </h2>
+            <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
+              Arraste o controle para ver a diferença entre um PDF comum e a experiência premium em formato de app.
+            </p>
+          </div>
+          <div className="max-w-5xl mx-auto px-4">
+            <BeforeAfterCompare
+              beforeSrc="https://picsum.photos/id/1015/1600/900"
+              afterSrc="https://picsum.photos/id/1016/1600/900"
+              beforeLabel="Antes"
+              afterLabel="Depois"
+              initialPosition={0.5}
+              className="mx-auto"
+            />
+            <div className="mt-10">
+              <BeforeAfterCompare
+                beforeSrc="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+                afterSrc="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+                beforeLabel="Antes (vídeo)"
+                afterLabel="Depois (vídeo)"
+                initialPosition={0.5}
+                beforeIsVideo
+                afterIsVideo
+                className="mx-auto"
+              />
             </div>
           </div>
         </div>
@@ -204,6 +242,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <TestimonialsSection />
 
       {/* Offer Section */}
       <section id="offer" className="py-16 sm:py-20 md:py-28 lg:py-32 bg-muted/30">
