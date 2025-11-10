@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Check, FileText, Smartphone, TrendingUp, Users, Shield, Sparkles } from "lucide-react";
 import { HeroWithAurora } from "@/components/HeroWithAurora";
 import { BeforeAfterCompare } from "@/components/ui/before-after-compare";
-import { TestimonialsSection } from "@/components/TestimonialsSection";
 import Footer from "@/components/ui/footer";
+import FAQs from "@/components/ui/faqs";
 
 const Index = () => {
   const scrollToCTA = () => {
@@ -15,6 +15,42 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Hero Section with Aurora Background */}
       <HeroWithAurora onCTAClick={scrollToCTA} />
+
+      {/* Trust Bar */}
+      <section className="py-4 bg-muted/20 border-t border-b">
+        <div className="section-container">
+          <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 text-xs md:text-sm text-muted-foreground px-4">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-background border">+1.000 alunos</span>
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-background border">★★★★★ 4,9/5</span>
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-background border">Suporte em português</span>
+          </div>
+        </div>
+      </section>
+
+      {/* O problema */}
+      <section className="py-16 sm:py-20 md:py-24">
+        <div className="section-container">
+          <div className="max-w-3xl mx-auto text-center px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4">O problema</h2>
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+              Seu ebook não deveria ser “só um PDF”. PDFs comuns parecem genéricos, têm baixo valor percebido e ficam esquecidos na pasta de downloads. Resultado: menos engajamento, mais reembolsos e ticket estagnado.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* A solução */}
+      <section className="py-16 sm:py-20 md:py-24 bg-muted/30">
+        <div className="section-container">
+          <div className="max-w-3xl mx-auto text-center px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4">A solução</h2>
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
+              Com o MEP — Método Ebook Premium, você entrega seu conteúdo como app interativo: navegação intuitiva, design premium, leitura fluida e marca forte. Sem código. Sem fricção. Só copiar e colar.
+            </p>
+            <Button variant="premium" size="xl" onClick={scrollToCTA}>Criar meu Ebook Premium</Button>
+          </div>
+        </div>
+      </section>
 
       {/* Before x After Section */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-muted/30">
@@ -45,11 +81,15 @@ const Index = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 flex-shrink-0">•</span>
+                  <span>Pouco tempo de tela</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 flex-shrink-0">•</span>
                   <span>Cliente não engaja</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 flex-shrink-0">•</span>
-                  <span>Cai no esquecimento</span>
+                  <span>Vira arquivo esquecido</span>
                 </li>
               </ul>
             </div>
@@ -60,11 +100,11 @@ const Index = () => {
                 <Smartphone className="w-7 h-7 md:w-8 md:h-8 text-accent flex-shrink-0" />
                 <span className="text-xs md:text-sm font-medium text-accent tracking-wide">DEPOIS</span>
               </div>
-              <h3 className="text-xl md:text-2xl font-display font-semibold mb-4 md:mb-5">App interativo</h3>
+              <h3 className="text-xl md:text-2xl font-display font-semibold mb-4 md:mb-5">App premium</h3>
               <ul className="space-y-3 text-sm md:text-base text-primary-foreground/90">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span>Experiência premium</span>
+                  <span>Interface moderna e interativa</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
@@ -72,7 +112,11 @@ const Index = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span>Cliente fica engajado</span>
+                  <span>Mais tempo de leitura</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                  <span>Cliente engajado do início ao fim</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
@@ -92,7 +136,7 @@ const Index = () => {
               Compare antes e depois
             </h2>
             <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
-              Arraste o controle para ver a diferença entre um PDF comum e a experiência premium em formato de app.
+              Compare na prática: arraste o controle para ver a diferença entre um PDF comum e a experiência premium em formato de app.
             </p>
           </div>
           <div className="max-w-5xl mx-auto px-4">
@@ -113,7 +157,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* What You Get Section */}
+      {/* O que você recebe (stack de valor) */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32">
         <div className="section-container">
           <div className="text-center mb-12 md:mb-16 px-4">
@@ -121,80 +165,65 @@ const Index = () => {
               O que você recebe
             </h2>
           </div>
-          
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto px-4">
-            <div className="text-center px-4 py-6">
-              <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-accent/20 mb-5 md:mb-6">
-                <Sparkles className="w-7 h-7 md:w-8 md:h-8 text-accent" />
+          <div className="max-w-4xl mx-auto px-4">
+            <ul className="space-y-3 md:space-y-4 text-sm md:text-base text-muted-foreground">
+              <li className="flex items-start gap-3"><Sparkles className="w-5 h-5 text-accent mt-0.5" /><span><span className="font-medium">Template pronto</span> — Interface completa e profissional, pronta para usar.</span></li>
+              <li className="flex items-start gap-3"><TrendingUp className="w-5 h-5 text-accent mt-0.5" /><span><span className="font-medium">Método Copy & Paste</span> — Passo a passo simples, sem necessidade de programação.</span></li>
+              <li className="flex items-start gap-3"><Smartphone className="w-5 h-5 text-accent mt-0.5" /><span><span className="font-medium">Design premium personalizável</span> — Cores, tipografia e branding da sua marca.</span></li>
+              <li className="flex items-start gap-3"><FileText className="w-5 h-5 text-accent mt-0.5" /><span><span className="font-medium">Guias de implementação</span> — Onboarding rápido, checklist e melhores práticas.</span></li>
+              <li className="flex items-start gap-3"><Users className="w-5 h-5 text-accent mt-0.5" /><span><span className="font-medium">Suporte na implementação</span> — Acompanhamento para dúvidas e ajustes.</span></li>
+            </ul>
+
+            <div className="grid sm:grid-cols-2 gap-4 md:gap-6 mt-8">
+              <div className="card-premium border border-border p-4 text-center">
+                <div className="text-sm md:text-base font-medium">Bônus 1</div>
+                <div className="text-sm md:text-base text-muted-foreground">Pacote de telas e ícones (valor percebido R$197)</div>
               </div>
-              <h3 className="text-lg md:text-xl font-display font-semibold mb-2 md:mb-3">Template pronto</h3>
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                Interface completa e profissional, pronta para usar
-              </p>
+              <div className="card-premium border border-border p-4 text-center">
+                <div className="text-sm md:text-base font-medium">Bônus 2</div>
+                <div className="text-sm md:text-base text-muted-foreground">Checklist de conversão para ebooks (valor percebido R$97)</div>
+              </div>
             </div>
 
-            <div className="text-center px-4 py-6">
-              <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-accent/20 mb-5 md:mb-6">
-                <TrendingUp className="w-7 h-7 md:w-8 md:h-8 text-accent" />
-              </div>
-              <h3 className="text-lg md:text-xl font-display font-semibold mb-2 md:mb-3">Método copy & paste</h3>
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                Rápido e simples, sem necessidade de programação
-              </p>
-            </div>
-
-            <div className="text-center px-4 py-6 sm:col-span-2 lg:col-span-1">
-              <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-accent/20 mb-5 md:mb-6">
-                <Smartphone className="w-7 h-7 md:w-8 md:h-8 text-accent" />
-              </div>
-              <h3 className="text-lg md:text-xl font-display font-semibold mb-2 md:mb-3">App com visual premium</h3>
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                Design moderno que valoriza seu conteúdo
-              </p>
+            <div className="text-center mt-8">
+              <Button variant="premium" size="xl" onClick={scrollToCTA}>Quero meu template premium</Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why It Works Section */}
+      {/* Por que funciona */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-primary text-primary-foreground">
         <div className="section-container">
           <div className="max-w-4xl mx-auto text-center px-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4 md:mb-6 leading-tight">
-              O seu cliente valoriza<br className="hidden sm:inline" />
-              <span className="sm:hidden"> </span>experiência, não arquivo.
+              O seu cliente valoriza experiência, não arquivo.
             </h2>
             
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12 mt-12 md:mt-16">
               <div className="px-4">
                 <div className="text-4xl md:text-5xl font-display font-bold text-accent mb-3 md:mb-4">01</div>
                 <h3 className="text-lg md:text-xl font-display font-semibold mb-2 md:mb-3">Engaja mais</h3>
-                <p className="text-sm md:text-base text-primary-foreground/80 leading-relaxed">
-                  App com navegação intuitiva mantém o cliente focado
-                </p>
+                <p className="text-sm md:text-base text-primary-foreground/80 leading-relaxed">App com navegação intuitiva mantém o leitor focado e reduz abandono.</p>
               </div>
 
               <div className="px-4">
                 <div className="text-4xl md:text-5xl font-display font-bold text-accent mb-3 md:mb-4">02</div>
                 <h3 className="text-lg md:text-xl font-display font-semibold mb-2 md:mb-3">Aumenta o valor</h3>
-                <p className="text-sm md:text-base text-primary-foreground/80 leading-relaxed">
-                  Experiência premium justifica preços maiores
-                </p>
+                <p className="text-sm md:text-base text-primary-foreground/80 leading-relaxed">A experiência premium justifica preço maior e reforça sua autoridade.</p>
               </div>
 
               <div className="px-4 sm:col-span-2 lg:col-span-1">
                 <div className="text-4xl md:text-5xl font-display font-bold text-accent mb-3 md:mb-4">03</div>
                 <h3 className="text-lg md:text-xl font-display font-semibold mb-2 md:mb-3">Reduz reembolsos</h3>
-                <p className="text-sm md:text-base text-primary-foreground/80 leading-relaxed">
-                  Cliente satisfeito com a experiência fica
-                </p>
+                <p className="text-sm md:text-base text-primary-foreground/80 leading-relaxed">Entrega superior = cliente satisfeito e menos pedidos de reembolso.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Target Audience Section */}
+      {/* Para quem é */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32">
         <div className="section-container">
           <div className="text-center mb-12 md:mb-16 px-4">
@@ -207,38 +236,31 @@ const Index = () => {
             <div className="card-premium flex items-start gap-3 md:gap-4">
               <Users className="w-6 h-6 md:w-7 md:h-7 text-accent flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-lg md:text-xl font-display font-semibold mb-2">Vende ebooks</h3>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                  E quer entregar algo que realmente impressione seus clientes
-                </p>
+                <h3 className="text-lg md:text-xl font-display font-semibold mb-2">Quem vende ebooks</h3>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">E quer impressionar seus clientes com experiência premium.</p>
               </div>
             </div>
 
             <div className="card-premium flex items-start gap-3 md:gap-4">
               <Sparkles className="w-6 h-6 md:w-7 md:h-7 text-accent flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-lg md:text-xl font-display font-semibold mb-2">Quer se diferenciar</h3>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                  E ser percebido como especialista premium no mercado
-                </p>
+                <h3 className="text-lg md:text-xl font-display font-semibold mb-2">Profissionais e experts</h3>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">Que desejam posicionamento premium e reforço de autoridade.</p>
               </div>
             </div>
 
             <div className="card-premium flex items-start gap-3 md:gap-4">
               <TrendingUp className="w-6 h-6 md:w-7 md:h-7 text-accent flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-lg md:text-xl font-display font-semibold mb-2">Quer aumentar ticket</h3>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                  E cobrar mais oferecendo uma experiência de alto valor
-                </p>
+                <h3 className="text-lg md:text-xl font-display font-semibold mb-2">Infoprodutores</h3>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">Que buscam aumentar ticket e retenção com alto valor percebido.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <TestimonialsSection />
+      {/* Testimonials Section removida conforme instrução */}
 
       {/* Offer Section */}
       <section id="offer" className="py-16 sm:py-20 md:py-28 lg:py-32 bg-muted/30">
@@ -284,17 +306,22 @@ const Index = () => {
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
                   <span className="text-sm md:text-base">Suporte para implementação</span>
                 </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
+                  <span className="text-sm md:text-base">Bônus: telas + checklist (R$294 de valor percebido)</span>
+                </div>
               </div>
               
               <Button variant="premium" size="xl" className="w-full max-w-md mx-auto">
                 Quero transformar meu ebook
               </Button>
+              <div className="text-xs md:text-sm text-muted-foreground mt-3">Pagamento único. Acesso imediato.</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Guarantee Section */}
+      {/* Garantia */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32">
         <div className="section-container">
           <div className="max-w-3xl mx-auto text-center px-4">
@@ -302,13 +329,49 @@ const Index = () => {
               <Shield className="w-8 h-8 md:w-10 md:h-10 text-accent" />
             </div>
             
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4 md:mb-5">
-              Garantia total
-            </h2>
-            
-            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Se você aplicar o método e não conseguir criar seu app premium, devolvemos 100% do seu investimento. Sem perguntas, sem complicação.
-            </p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4 md:mb-5">Garantia incondicional</h2>
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">Aplique o método e, se não conseguir criar seu app premium, devolvemos 100% do seu investimento. Sem perguntas, sem complicação.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Como funciona (3 passos) */}
+      <section className="py-16 sm:py-20 md:py-28 lg:py-32">
+        <div className="section-container">
+          <div className="text-center mb-10 md:mb-12 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">Como funciona</h2>
+          </div>
+          <div className="max-w-4xl mx-auto grid sm:grid-cols-3 gap-6 md:gap-8 px-4">
+            <div className="card-premium p-4 text-center">
+              <div className="text-3xl font-display font-bold text-accent mb-2">01</div>
+              <div className="text-sm md:text-base font-medium mb-1">Importe o template</div>
+              <div className="text-xs md:text-sm text-muted-foreground">Baixe o projeto e abra no ambiente indicado.</div>
+            </div>
+            <div className="card-premium p-4 text-center">
+              <div className="text-3xl font-display font-bold text-accent mb-2">02</div>
+              <div className="text-sm md:text-base font-medium mb-1">Copy & Paste</div>
+              <div className="text-xs md:text-sm text-muted-foreground">Copie seu conteúdo e assets. Personalize cores e fontes.</div>
+            </div>
+            <div className="card-premium p-4 text-center">
+              <div className="text-3xl font-display font-bold text-accent mb-2">03</div>
+              <div className="text-sm md:text-base font-medium mb-1">Publicação</div>
+              <div className="text-xs md:text-sm text-muted-foreground">Gere seu app e entregue ao cliente (web/app). Suporte acompanha.</div>
+            </div>
+          </div>
+          <div className="text-center mt-8">
+            <Button variant="premium" size="xl" onClick={scrollToCTA}>Quero começar agora</Button>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-muted/30">
+        <div className="section-container">
+          <div className="text-center mb-10 md:mb-12 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">FAQ</h2>
+          </div>
+          <div className="max-w-4xl mx-auto px-4">
+            <FAQs />
           </div>
         </div>
       </section>
