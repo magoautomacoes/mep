@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Check, FileText, Smartphone, TrendingUp, Users, Shield, Sparkles } from "lucide-react";
+import { HeroWithAurora } from "@/components/HeroWithAurora";
 
 const Index = () => {
   const scrollToCTA = () => {
@@ -9,44 +10,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="section-container pt-16 md:pt-24 pb-20 md:pb-32">
-        <div className="text-center max-w-4xl mx-auto">
-          <div className="mb-8 inline-block">
-            <div className="text-accent text-5xl md:text-6xl font-display font-bold tracking-tight">
-              MEP
-            </div>
-            <div className="text-xs md:text-sm text-muted-foreground mt-1 tracking-widest">
-              MÉTODO EBOOK PREMIUM
-            </div>
-          </div>
-          
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-6 leading-tight animate-fade-in">
-            Seu ebook não vai mais<br />ser só um PDF.
-          </h1>
-          
-          <p className="text-xl md:text-2xl lg:text-3xl font-display mb-4 text-secondary animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            Torne-se premium entregando um app.
-          </p>
-          
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Transforme seu ebook em um aplicativo moderno, com visual profissional e experiência de leitura premium.
-          </p>
-          
-          <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <Button 
-              onClick={scrollToCTA}
-              className="btn-primary mb-4"
-            >
-              Quero criar meu Ebook Premium
-            </Button>
-            
-            <p className="text-sm text-muted-foreground">
-              Não precisa programar. Método Copy & Paste.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section with Aurora Background */}
+      <HeroWithAurora onCTAClick={scrollToCTA} />
 
       {/* Before x After Section */}
       <section className="section-container py-20 md:py-32 bg-muted/30">
