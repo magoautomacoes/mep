@@ -15,6 +15,7 @@ type BeforeAfterCompareProps = {
   afterIsVideo?: boolean;
   beforeVideoProps?: React.VideoHTMLAttributes<HTMLVideoElement>;
   afterVideoProps?: React.VideoHTMLAttributes<HTMLVideoElement>;
+  containerClassName?: string;
 };
 
 export const BeforeAfterCompare: React.FC<BeforeAfterCompareProps> = ({
@@ -30,6 +31,7 @@ export const BeforeAfterCompare: React.FC<BeforeAfterCompareProps> = ({
   afterIsVideo = false,
   beforeVideoProps,
   afterVideoProps,
+  containerClassName,
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const [pos, setPos] = React.useState(() => {
@@ -69,7 +71,10 @@ export const BeforeAfterCompare: React.FC<BeforeAfterCompareProps> = ({
     <div className={clsx("w-full", className)}>
       <div
         ref={containerRef}
-        className="relative w-full h-64 sm:h-80 md:h-96 overflow-hidden rounded-xl border"
+        className={clsx(
+          "relative w-full overflow-hidden rounded-xl border mx-auto",
+          containerClassName || "h-64 sm:h-80 md:h-96",
+        )}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
@@ -80,7 +85,7 @@ export const BeforeAfterCompare: React.FC<BeforeAfterCompareProps> = ({
         {afterIsVideo ? (
           <video
             src={afterSrc}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover object-center"
             autoPlay
             loop
             muted
@@ -91,7 +96,7 @@ export const BeforeAfterCompare: React.FC<BeforeAfterCompareProps> = ({
           <img
             src={afterSrc}
             alt={afterAlt}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover object-center"
             draggable={false}
           />
         )}
@@ -104,7 +109,7 @@ export const BeforeAfterCompare: React.FC<BeforeAfterCompareProps> = ({
           {beforeIsVideo ? (
             <video
               src={beforeSrc}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
               autoPlay
               loop
               muted
@@ -115,7 +120,7 @@ export const BeforeAfterCompare: React.FC<BeforeAfterCompareProps> = ({
             <img
               src={beforeSrc}
               alt={beforeAlt}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
               draggable={false}
             />
           )}
@@ -135,17 +140,17 @@ export const BeforeAfterCompare: React.FC<BeforeAfterCompareProps> = ({
 
         {/* Linha/Handle */}
         <div
-          className="absolute inset-y-0 z-20 flex items-center"
+          className="absolute inset-y-0 z-20 flex items-center group"
           style={{ left: handleLeft }}
         >
-          <div className="w-px h-full bg-border" />
+          <div className="w-px h-full bg-border group-hover:bg-accent transition-colors" />
           <button
             type="button"
             aria-label="Arrastar comparação"
             role="slider"
             tabIndex={0}
             onKeyDown={onKeyDown}
-            className="-ml-3 rounded-full border bg-background shadow w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center"
+            className="-ml-3 rounded-full border bg-background/80 backdrop-blur-sm shadow w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center ring-0 group-hover:ring-2 group-hover:ring-accent transition-all"
           >
             <span className="block w-1.5 h-1.5 rounded-full bg-foreground/70" />
           </button>

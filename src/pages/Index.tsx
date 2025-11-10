@@ -95,24 +95,17 @@ const Index = () => {
             </p>
           </div>
           <div className="max-w-5xl mx-auto px-4">
-            <BeforeAfterCompare
-              beforeSrc="https://picsum.photos/id/1015/1600/900"
-              afterSrc="https://picsum.photos/id/1016/1600/900"
-              beforeLabel="Antes"
-              afterLabel="Depois"
-              initialPosition={0.5}
-              className="mx-auto"
-            />
-            <div className="mt-10">
+            <div className="flex justify-center">
               <BeforeAfterCompare
-                beforeSrc="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
-                afterSrc="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-                beforeLabel="Antes (vídeo)"
-                afterLabel="Depois (vídeo)"
+                beforeSrc="https://s3.magoautomacoes.com.br/desing/video%20demonstrativo%20sem%20app.mp4"
+                afterSrc="https://s3.magoautomacoes.com.br/desing/video%20demonstrativo%20app.mp4"
+                beforeLabel="Antes (PDF)"
+                afterLabel="Depois (App)"
                 initialPosition={0.5}
                 beforeIsVideo
                 afterIsVideo
                 className="mx-auto"
+                containerClassName="aspect-[9/16] w-full max-w-[360px] sm:max-w-[420px] md:max-w-[480px]"
               />
             </div>
           </div>
@@ -271,6 +264,8 @@ const Index = () => {
                 </div>
               </div>
 
+              {/* CTA principal movida para a base do card */}
+
               <div className="space-y-3 md:space-y-4 mb-8 md:mb-10 text-left max-w-md mx-auto px-2">
                 <div className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
@@ -290,7 +285,7 @@ const Index = () => {
                 </div>
               </div>
               
-              <Button className="btn-primary w-full max-w-md mx-auto">
+              <Button variant="premium" size="xl" className="w-full max-w-md mx-auto">
                 Quero transformar meu ebook
               </Button>
             </div>

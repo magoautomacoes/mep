@@ -42,7 +42,7 @@ export const HeroWithAurora = ({ onCTAClick }: HeroWithAuroraProps) => {
         </p>
 
         <div className="flex flex-col items-center gap-3 w-full max-w-md px-4">
-          <Button onClick={onCTAClick} className="btn-primary w-full sm:w-auto">
+          <Button onClick={onCTAClick} variant="premium" size="lg" className="w-full sm:w-auto">
             Quero criar meu Ebook Premium
           </Button>
 

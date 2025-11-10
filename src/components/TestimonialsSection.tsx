@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "motion/react";
+import { Badge } from "@/components/ui/badge";
 import { TestimonialsColumn, Testimonial } from "@/components/ui/testimonials-columns-1";
 
 const testimonials: Testimonial[] = [
@@ -84,7 +85,7 @@ export const TestimonialsSection = () => {
           className="flex flex-col items-center justify-center max-w-[540px] mx-auto"
         >
           <div className="flex justify-center">
-            <div className="border py-1 px-4 rounded-lg">Depoimentos</div>
+            <Badge variant="outline" className="px-4 py-1 rounded-lg">Depoimentos</Badge>
           </div>
 
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter mt-5">
