@@ -5,11 +5,12 @@ import { HeroWithAurora } from "@/components/HeroWithAurora";
 import { BeforeAfterCompare } from "@/components/ui/before-after-compare";
 import { MobileFrame } from "@/components/ui/mobile-frame";
 import Footer from "@/components/ui/footer";
-import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
 import FAQs from "@/components/ui/faqs";
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import { AuroraText } from "@/components/ui/aurora-text";
 import { LineShadowText } from "@/components/ui/line-shadow-text";
+import { useEffect } from "react";
 
 const Index = () => {
   const scrollToCTA = () => {
@@ -17,10 +18,34 @@ const Index = () => {
     ctaSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // Carrega o player VTurb
+  useEffect(() => {
+    const src = "https://scripts.converteai.net/7b4fdf64-05e0-4e69-9e1d-b9778193a90f/players/69139e76bd5d00c99be1793e/v4/player.js";
+    const already = Array.from(document.scripts).some(s => s.src === src);
+    if (!already) {
+      const s = document.createElement("script");
+      s.src = src;
+      s.async = true;
+      document.head.appendChild(s);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen">
       {/* Hero Section with Aurora Background */}
-      <HeroWithAurora onCTAClick={scrollToCTA} />
+      <HeroWithAurora onCTAClick={() => window.open('https://pay.kiwify.com.br/VhOXJRK', '_blank')} />
+
+      {/* Área de Vídeo (VTurb) */}
+      <section className="py-12 sm:py-14 md:py-16">
+        <div className="section-container">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <div className="text-center mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold">Assista ao vídeo</h2>
+            </div>
+            <vturb-smartplayer id="vid-69139e76bd5d00c99be1793e" style={{ display: "block", margin: "0 auto", width: "100%" }}></vturb-smartplayer>
+          </div>
+        </div>
+      </section>
 
       {/* Demonstração interativa: Antes vs Depois */}
       <section className="py-12 sm:py-14 md:py-16 bg-muted/30">
@@ -82,7 +107,7 @@ const Index = () => {
               Tudo isso <strong>sem programação</strong>, seguindo um passo a passo de copiar e colar.
             </p>
             <div className="mt-4">
-              <Button variant="premium" size="xl" onClick={scrollToCTA}>Transformar meu e‑book agora</Button>
+              <Button variant="premium" size="xl" onClick={() => window.open('https://pay.kiwify.com.br/VhOXJRK', '_blank')}>Transformar meu e‑book agora</Button>
             </div>
           </div>
         </div>
@@ -172,8 +197,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Depoimentos (colunas shadcn) */}
-      <TestimonialsCarousel />
+      {/* Depoimentos (layout em cascata) */}
+      <TestimonialsSection />
 
       
 
@@ -274,7 +299,7 @@ const Index = () => {
                 </div>
               </div>
               
-              <Button variant="premium" size="xl" className="w-full max-w-md mx-auto" aria-label="Garantir meu app premium">
+              <Button variant="premium" size="xl" className="w-full max-w-md mx-auto" aria-label="Garantir meu app premium" onClick={() => window.open('https://pay.kiwify.com.br/VhOXJRK', '_blank')}>
                 Garantir meu app premium
               </Button>
               <div className="text-xs md:text-sm text-muted-foreground mt-3">Preço de lançamento por tempo limitado. Pagamento único. Acesso imediato. Garantia de satisfação ou reembolso 100%.</div>
@@ -319,7 +344,7 @@ const Index = () => {
             </div>
           </div>
           <div className="text-center mt-8">
-            <Button variant="premium" size="xl" onClick={scrollToCTA} aria-label="Quero transformar meu e‑book agora">Quero transformar meu e‑book agora</Button>
+            <Button variant="premium" size="xl" onClick={() => window.open('https://pay.kiwify.com.br/VhOXJRK', '_blank')} aria-label="Quero transformar meu e‑book agora">Quero transformar meu e‑book agora</Button>
           </div>
         </div>
       </section>
@@ -340,13 +365,7 @@ const Index = () => {
               Pronto para valorizar seu e‑book?
             </h2>
             
-            <Button 
-              onClick={scrollToCTA}
-              className="btn-champagne w-full sm:w-auto"
-              aria-label="Começar agora"
-            >
-              Começar agora
-            </Button>
+            {/* Botão final removido conforme solicitado */}
             <div className="text-sm md:text-base text-primary-foreground/80 mt-4">Eleve seu conteúdo a outro nível e aumente o engajamento com um app premium em minutos.</div>
           </div>
         </div>
