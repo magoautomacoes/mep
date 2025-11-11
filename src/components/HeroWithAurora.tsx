@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { AuroraBackground } from "@/components/ui/aurora-background";
+import { AuroraText } from "@/components/ui/aurora-text";
 // Removed AuroraText to simplify and consolidate the message hierarchy
 
 interface HeroWithAuroraProps {
@@ -29,16 +30,37 @@ export const HeroWithAurora = ({ onCTAClick }: HeroWithAuroraProps) => {
         </div>
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-2 sm:mb-3 md:mb-4 leading-tight text-center text-foreground px-2">
-          Transforme seu e‑book em um app premium em minutos — sem programar.
+          Transforme seu e‑book em um app
+          {" "}
+          <AuroraText
+            colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]}
+          >
+            premium
+          </AuroraText>
+          {" "}em minutos — sem programar.
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-muted-foreground text-center px-2 mb-6 md:mb-8">
-          PDFs são esquecidos; um app premium engaja, valoriza seu conteúdo e aumenta suas vendas.
+          PDFs são esquecidos; um app
+          {" "}
+          <AuroraText
+            colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]}
+          >
+            premium
+          </AuroraText>
+          {" "}engaja, valoriza seu conteúdo e aumenta suas vendas.
         </p>
 
         <div className="w-full max-w-md px-4">
           <Button onClick={onCTAClick} aria-label="Quero meu app premium agora" variant="premium" size="lg" className="w-full sm:w-auto text-base md:text-lg">
-            Quero meu app premium agora
+            Quero meu app
+            {" "}
+            <AuroraText
+              colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]}
+            >
+              premium
+            </AuroraText>
+            {" "}agora
           </Button>
         </div>
       </motion.div>

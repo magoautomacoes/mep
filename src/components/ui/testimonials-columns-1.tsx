@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "motion/react";
+import { AuroraText } from "@/components/ui/aurora-text";
 
 export type Testimonial = {
   text: string;
@@ -14,6 +15,26 @@ export const TestimonialsColumn = (props: {
   testimonials: Testimonial[];
   duration?: number;
 }) => {
+  const renderWithPremiumHighlight = (text: string) => {
+    const parts = text.split(/(premium)/gi);
+    return (
+      <>
+        {parts.map((part, idx) => {
+          if (part.toLowerCase() === "premium") {
+            return (
+              <AuroraText
+                key={idx}
+                colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]}
+              >
+                premium
+              </AuroraText>
+            );
+          }
+          return <React.Fragment key={idx}>{part}</React.Fragment>;
+        })}
+      </>
+    );
+  };
   return (
     <div className={props.className}>
       <motion.div
@@ -36,7 +57,7 @@ export const TestimonialsColumn = (props: {
                   className="p-10 rounded-3xl border border-border/60 bg-card/50 backdrop-blur-sm shadow-lg shadow-primary/10 hover:shadow-primary/20 transition-shadow max-w-xs w-full"
                   key={i}
                 >
-                  <div>{text}</div>
+                  <div>{renderWithPremiumHighlight(text)}</div>
                   <div className="flex items-center gap-2 mt-5">
                     <img
                       width={40}

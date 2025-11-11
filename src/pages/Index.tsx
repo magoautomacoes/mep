@@ -33,7 +33,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section with Aurora Background */}
-      <HeroWithAurora onCTAClick={() => window.open('https://pay.kiwify.com.br/VhOXJRK', '_blank')} />
+      <HeroWithAurora onCTAClick={scrollToCTA} />
 
       {/* Seção de Vídeo (VTurb) redesenhada */}
       <section className="py-16 sm:py-20 md:py-24 bg-muted/30">
@@ -41,7 +41,12 @@ const Index = () => {
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <div className="text-center mb-4 md:mb-5">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">Veja o MEP em ação</h2>
-              <p className="text-sm md:text-base text-muted-foreground mt-2">Demonstração rápida: do PDF comum ao app premium que engaja e valoriza seu conteúdo.</p>
+              <p className="text-sm md:text-base text-muted-foreground mt-2">
+                Demonstração rápida: do PDF comum ao app
+                {" "}
+                <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]}>premium</AuroraText>
+                {" "}que engaja e valoriza seu conteúdo.
+              </p>
             </div>
             <div className="card-premium border-2 border-border rounded-xl overflow-hidden shadow-sm">
               <vturb-smartplayer id="vid-69139e76bd5d00c99be1793e" style={{ display: "block", margin: "0 auto", width: "100%" }}></vturb-smartplayer>
@@ -56,7 +61,11 @@ const Index = () => {
         <div className="section-container">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <div className="text-center mb-6">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold">Arraste para comparar: PDF comum x App premium</h2>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold">
+                Arraste para comparar: PDF comum x App
+                {" "}
+                <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]}>premium</AuroraText>
+              </h2>
             </div>
             <MobileFrame className="mx-auto w-[300px] sm:w-[340px] md:w-[380px] h-[600px] sm:h-[680px] md:h-[760px]">
               <BeforeAfterCompare
@@ -111,7 +120,7 @@ const Index = () => {
               Tudo isso <strong>sem programação</strong>, seguindo um passo a passo de copiar e colar.
             </p>
             <div className="mt-4">
-              <Button variant="premium" size="xl" onClick={() => window.open('https://pay.kiwify.com.br/VhOXJRK', '_blank')}>Transformar meu e‑book agora</Button>
+              <Button variant="premium" size="xl" onClick={scrollToCTA}>Transformar meu e‑book agora</Button>
             </div>
           </div>
         </div>
@@ -154,7 +163,11 @@ const Index = () => {
                 <Smartphone className="w-7 h-7 md:w-8 md:h-8 text-accent flex-shrink-0" />
                 <span className="text-xs md:text-sm font-medium text-accent tracking-wide">DEPOIS</span>
               </div>
-              <h3 className="text-xl md:text-2xl font-display font-semibold mb-4 md:mb-5">App premium</h3>
+              <h3 className="text-xl md:text-2xl font-display font-semibold mb-4 md:mb-5">
+                App
+                {" "}
+                <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]}>premium</AuroraText>
+              </h3>
               <ul className="space-y-4 md:space-y-5 text-sm md:text-base text-primary-foreground/90">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
@@ -186,7 +199,10 @@ const Index = () => {
                 </div>
                 <div className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
-                  <span className="text-sm md:text-base">Experiência premium justifica preços mais altos e reforça sua autoridade.</span>
+                  <span className="text-sm md:text-base">Experiência
+                    {" "}
+                    <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]}>premium</AuroraText>
+                    {" "}justifica preços mais altos e reforça sua autoridade.</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
@@ -291,7 +307,10 @@ const Index = () => {
                 </div>
                 <div className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
-                  <span className="text-sm md:text-base">Design premium personalizável</span>
+                  <span className="text-sm md:text-base">Design
+                    {" "}
+                    <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]}>premium</AuroraText>
+                  {" "}personalizável</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
@@ -304,7 +323,9 @@ const Index = () => {
               </div>
               
               <Button variant="premium" size="xl" className="w-full max-w-md mx-auto" aria-label="Garantir meu app premium" onClick={() => window.open('https://pay.kiwify.com.br/VhOXJRK', '_blank')}>
-                Garantir meu app premium
+                Garantir meu app
+                {" "}
+                <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]}>premium</AuroraText>
               </Button>
               <div className="text-xs md:text-sm text-muted-foreground mt-3">Preço de lançamento por tempo limitado. Pagamento único. Acesso imediato. Garantia de satisfação ou reembolso 100%.</div>
             </div>
@@ -348,7 +369,7 @@ const Index = () => {
             </div>
           </div>
           <div className="text-center mt-8">
-            <Button variant="premium" size="xl" onClick={() => window.open('https://pay.kiwify.com.br/VhOXJRK', '_blank')} aria-label="Quero transformar meu e‑book agora">Quero transformar meu e‑book agora</Button>
+            <Button variant="premium" size="xl" onClick={scrollToCTA} aria-label="Quero transformar meu e‑book agora">Quero transformar meu e‑book agora</Button>
           </div>
         </div>
       </section>
@@ -369,7 +390,10 @@ const Index = () => {
             </h2>
 
             {/* Botão final removido conforme solicitado */}
-            <div className="text-sm md:text-base text-primary-foreground/80 mt-4">Eleve seu conteúdo a outro nível e aumente o engajamento com um app premium em minutos.</div>
+            <div className="text-sm md:text-base text-primary-foreground/80 mt-4">Eleve seu conteúdo a outro nível e aumente o engajamento com um app
+              {" "}
+              <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]}>premium</AuroraText>
+              {" "}em minutos.</div>
           </div>
         </div>
       </section>

@@ -2,6 +2,7 @@
 import { motion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
 import { TestimonialsColumn, Testimonial } from "@/components/ui/testimonials-columns-1";
+import { AuroraText } from "@/components/ui/aurora-text";
 
 const testimonials: Testimonial[] = [
   {
@@ -92,7 +93,10 @@ export const TestimonialsSection = () => {
             O que nossos clientes dizem
           </h2>
           <p className="text-center mt-5 opacity-75">
-            Veja como entregamos uma experiência premium e aumentamos o valor percebido.
+            Veja como entregamos uma experiência
+            {" "}
+            <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]}>premium</AuroraText>
+            {" "}e aumentamos o valor percebido.
           </p>
         </motion.div>
 
