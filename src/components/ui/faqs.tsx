@@ -21,29 +21,29 @@ export default function FAQs({ items, className }: FAQsProps) {
         id: "item-1",
         question: "Preciso saber programar?",
         answer:
-          "Não. O método é zero código. Basta seguir o passo a passo e copiar/colar.",
+          "Não. Nosso método usa copiar e colar; qualquer pessoa consegue implementar.",
       },
       {
         id: "item-2",
-        question: "Funciona com qualquer ebook?",
-        answer: "Sim. O template é flexível e aceita ebooks curtos ou longos.",
+        question: "Funciona com qualquer e‑book?",
+        answer: "Sim. Você pode usar conteúdos em PDF, Word, Google Docs ou outras fontes de texto.",
       },
       {
         id: "item-3",
         question: "Posso usar minha identidade visual?",
-        answer: "Pode. Personalize cores, tipografia e elementos visuais.",
+        answer: "Sim. O template permite personalizar cores, fontes e logo da sua marca.",
       },
       {
         id: "item-4",
-        question: "Em quanto tempo eu coloco no ar?",
+        question: "Quanto tempo leva para colocar no ar?",
         answer:
-          "Em algumas horas, seguindo o guia (varia com o tamanho do ebook).",
+          "Em média, entre 60 e 120 minutos, seguindo nosso passo a passo.",
       },
       {
         id: "item-5",
         question: "E se eu não gostar?",
         answer:
-          "Acione a garantia total dentro do prazo e reembolsamos 100%.",
+          "Oferecemos garantia de satisfação ou reembolso integral.",
       },
     ];
 

@@ -11,34 +11,34 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    text: "Este método transformou nossos PDFs em uma experiência premium. A apresentação em formato de app elevou o valor percebido imediatamente.",
+    text: "O valor percebido elevou imediatamente. Nossos reembolsos caíram.",
     image: "https://randomuser.me/api/portraits/women/1.jpg",
     name: "Bruna Lima",
     role: "Gerente de Operações",
   },
   {
-    text: "Implementação simples, copy & paste de verdade.",
+    text: "Em poucas horas estava tudo publicado com visual profissional.",
     image: "https://randomuser.me/api/portraits/men/2.jpg",
     name: "João Carvalho",
-    role: "Gerente de TI",
+    role: "TI",
+  },
+  {
+    text: "A experiência de app mudou nosso posicionamento.",
+    image: "https://randomuser.me/api/portraits/men/4.jpg",
+    name: "Rafael Gomes",
+    role: "CEO",
+  },
+  {
+    text: "Clientes elogiaram o novo formato. Tivemos aumento de engajamento.",
+    image: "https://randomuser.me/api/portraits/men/5.jpg",
+    name: "Pedro Santos",
+    role: "Marketing",
   },
   {
     text: "Personalizamos sem complicação; visual profissional imediato.",
     image: "https://randomuser.me/api/portraits/women/3.jpg",
     name: "Marina Souza",
     role: "Líder de Suporte",
-  },
-  {
-    text: "Posicionamento premium — muito mais profissional aos olhos do cliente.",
-    image: "https://randomuser.me/api/portraits/men/4.jpg",
-    name: "Rafael Gomes",
-    role: "CEO",
-  },
-  {
-    text: "Ferramentas robustas, resultado imediato e elogios dos clientes.",
-    image: "https://randomuser.me/api/portraits/women/5.jpg",
-    name: "Isabela Martins",
-    role: "Gerente de Projetos",
   },
   {
     text: "Adoção rápida: interface moderna e envolvente em poucos cliques.",
