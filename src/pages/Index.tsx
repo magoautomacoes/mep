@@ -35,14 +35,18 @@ const Index = () => {
       {/* Hero Section with Aurora Background */}
       <HeroWithAurora onCTAClick={() => window.open('https://pay.kiwify.com.br/VhOXJRK', '_blank')} />
 
-      {/* Área de Vídeo (VTurb) */}
-      <section className="py-12 sm:py-14 md:py-16">
+      {/* Seção de Vídeo (VTurb) redesenhada */}
+      <section className="py-16 sm:py-20 md:py-24 bg-muted/30">
         <div className="section-container">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
-            <div className="text-center mb-6">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold">Assista ao vídeo</h2>
+            <div className="text-center mb-4 md:mb-5">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">Veja o MEP em ação</h2>
+              <p className="text-sm md:text-base text-muted-foreground mt-2">Demonstração rápida: do PDF comum ao app premium que engaja e valoriza seu conteúdo.</p>
             </div>
-            <vturb-smartplayer id="vid-69139e76bd5d00c99be1793e" style={{ display: "block", margin: "0 auto", width: "100%" }}></vturb-smartplayer>
+            <div className="card-premium border-2 border-border rounded-xl overflow-hidden shadow-sm">
+              <vturb-smartplayer id="vid-69139e76bd5d00c99be1793e" style={{ display: "block", margin: "0 auto", width: "100%" }}></vturb-smartplayer>
+            </div>
+            <div className="text-xs md:text-sm text-muted-foreground mt-3 text-center">Compatível com desktop e mobile.</div>
           </div>
         </div>
       </section>
