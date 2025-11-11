@@ -5,7 +5,7 @@ import { HeroWithAurora } from "@/components/HeroWithAurora";
 import { BeforeAfterCompare } from "@/components/ui/before-after-compare";
 import { MobileFrame } from "@/components/ui/mobile-frame";
 import Footer from "@/components/ui/footer";
-import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 import FAQs from "@/components/ui/faqs";
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import { AuroraText } from "@/components/ui/aurora-text";
@@ -32,17 +32,17 @@ const Index = () => {
                 containerClassName="h-full"
                 beforeSrc="https://s3.magoautomacoes.com.br/desing/video%20demonstrativo%20sem%20app.mp4"
                 afterSrc="https://s3.magoautomacoes.com.br/desing/video%20demonstrativo%20app.mp4"
-                beforeAlt="Sem app"
-                afterAlt="Com app"
-                beforeLabel="Sem app"
-                afterLabel="Com app"
+                beforeAlt="PDF comum"
+                afterAlt="App premium"
+                beforeLabel="PDF comum"
+                afterLabel="App premium"
                 initialPosition={0.5}
                 beforeIsVideo={true}
                 afterIsVideo={true}
               />
             </MobileFrame>
             <div className="text-xs md:text-sm text-muted-foreground mt-3 text-center">
-              Arraste para comparar a experiência entre PDF e App.
+              Arraste para ver a diferença.
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@ const Index = () => {
           <div className="max-w-3xl mx-auto text-center px-4 sm:px-6 md:px-8 space-y-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4">O problema</h2>
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-              Seu ebook não deveria ser “só um PDF”. PDFs comuns parecem genéricos, têm baixo valor percebido e ficam esquecidos na pasta de downloads. Resultado: menos engajamento, mais reembolsos e ticket estagnado.
+              Um PDF parece genérico, tem baixo valor percebido e fica esquecido. Isso reduz engajamento e vendas.
             </p>
           </div>
         </div>
@@ -67,10 +67,10 @@ const Index = () => {
           <div className="max-w-3xl mx-auto text-center px-4 sm:px-6 md:px-8 space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4">A solução</h2>
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-              Com o MEP — Método Ebook Premium, você entrega seu conteúdo como app interativo: navegação intuitiva, design premium, leitura fluida e marca forte — com gamificação, rede social interna, ranking e notificações. Sem fricção, sem necessidade de programação.
+              Com o Método Ebook Premium você converte seu PDF em um app interativo com design premium, gamificação, rede social e notificações. Sem programação. Aumenta engajamento, eleva o valor percebido e reduz reembolsos.
             </p>
             <div className="mt-4">
-              <Button variant="premium" size="xl" onClick={scrollToCTA}>Transformar meu e-book agora</Button>
+              <Button variant="premium" size="xl" onClick={scrollToCTA}>Transformar meu ebook agora</Button>
             </div>
           </div>
         </div>
@@ -98,11 +98,11 @@ const Index = () => {
               <ul className="space-y-4 md:space-y-5 text-sm md:text-base text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 flex-shrink-0">•</span>
-                  <span>PDF genérico, baixo valor percebido</span>
+                  <span>Parecendo genérico e com baixo valor percebido.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 flex-shrink-0">•</span>
-                  <span>PDF não engaja</span>
+              <span>Não engaja e fica esquecido.</span>
                 </li>
               </ul>
             </div>
@@ -117,11 +117,11 @@ const Index = () => {
               <ul className="space-y-4 md:space-y-5 text-sm md:text-base text-primary-foreground/90">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span>App com experiência premium, alto valor percebido</span>
+                  <span>Justificando preços maiores e elevando sua autoridade.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span>App engaja o cliente e reduz reembolsos</span>
+                  <span>Envolvendo o leitor e reduzindo pedidos de reembolso.</span>
                 </li>
               </ul>
             </div>
@@ -136,33 +136,32 @@ const Index = () => {
         <div className="section-container">
           <div className="text-center mb-10 sm:mb-12 md:mb-16 px-4 sm:px-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold">Benefícios</h2>
-            <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">Mais engajamento, maior valor percebido, autoridade de especialista e menos reembolsos.</p>
           </div>
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
-            <div className="space-y-4 md:space-y-5">
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
-                <span className="text-sm md:text-base">Gamificação, notificações e navegação fluida geram engajamento.</span>
+              <div className="space-y-4 md:space-y-5">
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
+                  <span className="text-sm md:text-base">Navegação fluida, gamificação e notificações mantêm o leitor ativo.</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
+                  <span className="text-sm md:text-base">Experiência premium justifica preços mais altos e reforça sua autoridade.</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
+                  <span className="text-sm md:text-base">Design profissional fortalece sua marca.</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
+                  <span className="text-sm md:text-base">Entrega superior reduz pedidos de reembolso.</span>
+                </div>
               </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
-                <span className="text-sm md:text-base">Visual premium eleva valor percebido e autoridade.</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
-                <span className="text-sm md:text-base">Marca forte e experiência moderna reforçam posicionamento.</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
-                <span className="text-sm md:text-base">Menos reembolsos e maior satisfação dos clientes.</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* Depoimentos (colunas shadcn) */}
-      <TestimonialsSection />
+      <TestimonialsCarousel />
 
       
 
@@ -182,7 +181,7 @@ const Index = () => {
               <Users className="w-6 h-6 md:w-7 md:h-7 text-accent flex-shrink-0 mt-1" />
               <div>
                 <h3 className="text-lg md:text-xl font-display font-semibold mb-2">Quem vende ebooks</h3>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">E quer impressionar seus clientes com experiência premium.</p>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">Quem quer impressionar seus leitores com uma experiência premium e aumentar o ticket.</p>
               </div>
             </div>
 
@@ -190,7 +189,7 @@ const Index = () => {
               <Sparkles className="w-6 h-6 md:w-7 md:h-7 text-accent flex-shrink-0 mt-1" />
               <div>
                 <h3 className="text-lg md:text-xl font-display font-semibold mb-2">Profissionais e experts</h3>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">Que desejam posicionamento premium e reforço de autoridade.</p>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">Quem deseja se posicionar como autoridade e elevar o valor percebido.</p>
               </div>
             </div>
 
@@ -198,7 +197,7 @@ const Index = () => {
               <TrendingUp className="w-6 h-6 md:w-7 md:h-7 text-accent flex-shrink-0 mt-1" />
               <div>
                 <h3 className="text-lg md:text-xl font-display font-semibold mb-2">Infoprodutores</h3>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">Que buscam aumentar ticket e retenção com alto valor percebido.</p>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">Quem busca fidelizar alunos e aumentar retenção com gamificação e comunidade.</p>
               </div>
             </div>
           </div>
@@ -263,8 +262,8 @@ const Index = () => {
                 </div>
               </div>
               
-              <Button variant="premium" size="xl" className="w-full max-w-md mx-auto" aria-label="Transformar meu e-book agora">
-                Transformar meu e-book agora
+              <Button variant="premium" size="xl" className="w-full max-w-md mx-auto" aria-label="Transformar meu ebook agora">
+                Transformar meu ebook agora
               </Button>
               <div className="text-xs md:text-sm text-muted-foreground mt-3">Pagamento único. Acesso imediato.</div>
             </div>
@@ -298,17 +297,17 @@ const Index = () => {
             </div>
             <div className="card-premium text-center">
               <div className="text-3xl font-display font-bold text-accent mb-2">02</div>
-              <div className="text-sm md:text-base font-medium mb-1">Personalize o conteúdo</div>
-              <div className="text-xs md:text-sm text-muted-foreground">Copie seu conteúdo e assets. Personalize cores e fontes.</div>
+              <div className="text-sm md:text-base font-medium mb-1">Personalize seu conteúdo</div>
+              <div className="text-xs md:text-sm text-muted-foreground">Copie texto/imagens e ajuste cores e fontes à sua marca.</div>
             </div>
             <div className="card-premium text-center">
               <div className="text-3xl font-display font-bold text-accent mb-2">03</div>
-              <div className="text-sm md:text-base font-medium mb-1">Publicação</div>
-              <div className="text-xs md:text-sm text-muted-foreground">Gere seu app e entregue ao cliente (web/app). Suporte acompanha.</div>
+              <div className="text-sm md:text-base font-medium mb-1">Publique</div>
+              <div className="text-xs md:text-sm text-muted-foreground">Gere seu app e entregue ao cliente (web/app) com nosso suporte.</div>
             </div>
           </div>
           <div className="text-center mt-8">
-            <Button variant="premium" size="xl" onClick={scrollToCTA}>Transformar meu e-book agora</Button>
+            <Button variant="premium" size="xl" onClick={scrollToCTA}>Transformar meu ebook agora</Button>
           </div>
         </div>
       </section>
@@ -322,20 +321,21 @@ const Index = () => {
             <div className="text-accent text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-5 md:mb-6">
               MEP
             </div>
-            
+            <div className="inline-block px-4 py-2 bg-accent text-accent-foreground rounded-full text-xs md:text-sm font-medium mb-6">
+                Preço de lançamento por tempo limitado
+              </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 md:mb-8 leading-tight">
-              Comece agora.<br className="hidden sm:inline" />
-              <span className="sm:hidden"> </span>Seu ebook merece ser <AnimatedShinyText shimmerWidth={140} className="text-primary-foreground bg-gradient-to-r from-transparent via-white/70 to-transparent">premium</AnimatedShinyText>.
+              Pronto para seu app premium? Comece agora →
             </h2>
             
             <Button 
               onClick={scrollToCTA}
               className="btn-champagne w-full sm:w-auto"
-              aria-label="Quero meu app premium agora"
+              aria-label="Transformar meu ebook agora"
             >
-              Quero meu app premium agora
+              Transformar meu ebook agora
             </Button>
-            <div className="text-sm md:text-base text-primary-foreground/80 mt-4">Eleve o valor do seu e-book com um app premium em minutos.</div>
+            <div className="text-sm md:text-base text-primary-foreground/80 mt-4">Eleve o valor do seu ebook com um app premium em minutos.</div>
           </div>
         </div>
       </section>

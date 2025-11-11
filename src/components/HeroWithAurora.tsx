@@ -30,21 +30,20 @@ export const HeroWithAurora = ({ onCTAClick }: HeroWithAuroraProps) => {
         </div>
 
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold mb-4 md:mb-6 leading-tight text-center text-foreground px-2">
-          Seu ebook não vai mais<br className="hidden sm:inline" />
-          <span className="sm:hidden"> </span>ser só um PDF.
+          Transforme seu ebook em um app premium em minutos — sem programar.
         </h1>
 
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-display mb-8 md:mb-10 text-secondary text-center px-2">
-          Crie um <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]} className="bg-clip-text text-transparent">app premium</AuroraText> em minutos, sem programação.
+          PDFs são esquecidos e desvalorizados. Um <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]} className="bg-clip-text text-transparent">app</AuroraText> engaja, valoriza seu conteúdo e aumenta suas vendas.
         </p>
 
         <div className="flex flex-col items-center gap-3 w-full max-w-md px-4">
-          <Button onClick={onCTAClick} aria-label="Transformar meu e-book agora" variant="premium" size="lg" className="w-full sm:w-auto">
-            Transformar meu e-book agora
+          <Button onClick={onCTAClick} aria-label="Quero meu app premium agora" variant="premium" size="lg" className="w-full sm:w-auto">
+            Quero meu app premium agora
           </Button>
 
-          <p className="text-xs sm:text-sm text-muted-foreground text-center">
-            Mesmo se você não souber programar, basta copiar e colar.
+          <p className="text-xs sm:text-sm text-muted-foreground text-center italic">
+            Funciona com copiar e colar, mesmo se você nunca programou.
           </p>
         </div>
       </motion.div>
