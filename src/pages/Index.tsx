@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Check, FileText, Smartphone, TrendingUp, Users, Sparkles } from "lucide-react";
 import { HeroWithAurora } from "@/components/HeroWithAurora";
 import { BeforeAfterCompare } from "@/components/ui/before-after-compare";
+import { MobileFrame } from "@/components/ui/mobile-frame";
 import Footer from "@/components/ui/footer";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import FAQs from "@/components/ui/faqs";
@@ -25,19 +26,21 @@ const Index = () => {
       <section className="py-12 sm:py-14 md:py-16 bg-muted/30">
         <div className="section-container">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
-            <BeforeAfterCompare
-              className="mx-auto w-[280px] sm:w-[320px] md:w-[360px]"
-              containerClassName="h-[560px] sm:h-[640px] md:h-[720px]"
-              beforeSrc="https://s3.magoautomacoes.com.br/desing/video%20demonstrativo%20sem%20app.mp4"
-              afterSrc="https://s3.magoautomacoes.com.br/desing/video%20demonstrativo%20app.mp4"
-              beforeAlt="Sem app"
-              afterAlt="Com app"
-              beforeLabel="Sem app"
-              afterLabel="Com app"
-              initialPosition={0.5}
-              beforeIsVideo={true}
-              afterIsVideo={true}
-            />
+            <MobileFrame className="mx-auto w-[300px] sm:w-[340px] md:w-[380px] h-[600px] sm:h-[680px] md:h-[760px]">
+              <BeforeAfterCompare
+                className="w-full h-full"
+                containerClassName="h-full"
+                beforeSrc="https://s3.magoautomacoes.com.br/desing/video%20demonstrativo%20sem%20app.mp4"
+                afterSrc="https://s3.magoautomacoes.com.br/desing/video%20demonstrativo%20app.mp4"
+                beforeAlt="Sem app"
+                afterAlt="Com app"
+                beforeLabel="Sem app"
+                afterLabel="Com app"
+                initialPosition={0.5}
+                beforeIsVideo={true}
+                afterIsVideo={true}
+              />
+            </MobileFrame>
             <div className="text-xs md:text-sm text-muted-foreground mt-3 text-center">
               Arraste para comparar a experiência entre PDF e App.
             </div>
