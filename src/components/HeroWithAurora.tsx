@@ -34,16 +34,8 @@ export const HeroWithAurora = ({ onCTAClick }: HeroWithAuroraProps) => {
           <span className="sm:hidden"> </span>ser só um PDF.
         </h1>
 
-        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-display mb-3 md:mb-4 text-secondary text-center px-2">
-          Torne-se <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]} className="bg-clip-text text-transparent">premium</AuroraText> entregando um app.
-        </p>
-
-        <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-3 md:mb-4 max-w-2xl mx-auto text-center px-4 leading-relaxed">
-          PDFs são esquecidos e desvalorizados; apps engajam e valorizam seu conteúdo.
-        </p>
-
-        <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 md:mb-10 max-w-2xl mx-auto text-center px-4 leading-relaxed">
-          Transforme seu ebook em um aplicativo moderno, com visual profissional e experiência de leitura premium.
+        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-display mb-8 md:mb-10 text-secondary text-center px-2">
+          Crie um <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]} className="bg-clip-text text-transparent">app premium</AuroraText> em minutos, sem programação.
         </p>
 
         <div className="flex flex-col items-center gap-3 w-full max-w-md px-4">

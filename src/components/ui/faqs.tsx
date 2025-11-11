@@ -41,18 +41,6 @@ export default function FAQs({ items, className }: FAQsProps) {
       },
       {
         id: "item-5",
-        question: "Como é o suporte?",
-        answer:
-          "Suporte assíncrono por e-mail/WhatsApp/Discord e updates gratuitos do método.",
-      },
-      {
-        id: "item-6",
-        question: "Qual é o formato final?",
-        answer:
-          "Entrega em app web responsivo (compatível com mobile e desktop). Opções para app nativo no guia avançado.",
-      },
-      {
-        id: "item-7",
         question: "E se eu não gostar?",
         answer:
           "Acione a garantia total dentro do prazo e reembolsamos 100%.",

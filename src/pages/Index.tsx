@@ -2,9 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, FileText, Smartphone, TrendingUp, Users, Sparkles } from "lucide-react";
 import { HeroWithAurora } from "@/components/HeroWithAurora";
-// before-after-compare import removido após consolidar a demonstração
+import { BeforeAfterCompare } from "@/components/ui/before-after-compare";
 import Footer from "@/components/ui/footer";
-// TestimonialsSection import removido; mantendo apenas TestimonialsCarousel
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import FAQs from "@/components/ui/faqs";
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
@@ -22,22 +21,25 @@ const Index = () => {
       {/* Hero Section with Aurora Background */}
       <HeroWithAurora onCTAClick={scrollToCTA} />
 
-      {/* Hero Video Demonstration */}
-      <section className="py-10 sm:py-12 md:py-14 bg-muted/30">
+      {/* Demonstração interativa: Antes vs Depois */}
+      <section className="py-12 sm:py-14 md:py-16 bg-muted/30">
         <div className="section-container">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
-            <div className="card-premium border border-border overflow-hidden">
-              <video
-                className="w-full h-auto"
-                src="https://s3.magoautomacoes.com.br/desing/video%20demonstrativo%20app.mp4"
-                controls
-                muted
-                playsInline
-                aria-label="Vídeo demonstrativo: experiência premium do app"
-              />
-            </div>
+            <BeforeAfterCompare
+              className="mx-auto w-[280px] sm:w-[320px] md:w-[360px]"
+              containerClassName="h-[560px] sm:h-[640px] md:h-[720px]"
+              beforeSrc="https://s3.magoautomacoes.com.br/desing/video%20demonstrativo%20sem%20app.mp4"
+              afterSrc="https://s3.magoautomacoes.com.br/desing/video%20demonstrativo%20app.mp4"
+              beforeAlt="Sem app"
+              afterAlt="Com app"
+              beforeLabel="Sem app"
+              afterLabel="Com app"
+              initialPosition={0.5}
+              beforeIsVideo={true}
+              afterIsVideo={true}
+            />
             <div className="text-xs md:text-sm text-muted-foreground mt-3 text-center">
-              Veja rapidamente a diferença visual e de experiência entre PDF e app.
+              Arraste para comparar a experiência entre PDF e App.
             </div>
           </div>
         </div>
@@ -126,33 +128,31 @@ const Index = () => {
 
       
 
-      {/* Benefícios em Bento Grid */}
+      {/* Benefícios em bullets concisos */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32">
         <div className="section-container">
           <div className="text-center mb-10 sm:mb-12 md:mb-16 px-4 sm:px-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold">Benefícios</h2>
             <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">Mais engajamento, maior valor percebido, autoridade de especialista e menos reembolsos.</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10 max-w-6xl mx-auto px-4 sm:px-6">
-            <div className="card-premium p-6">
-              <div className="text-lg font-display font-semibold mb-2">Engajamento</div>
-              <p className="text-sm md:text-base text-muted-foreground">Navegação fluida, gamificação e notificações mantêm o leitor ativo.</p>
-              <div className="text-xs md:text-sm opacity-70 mt-3">“Aumento claro de engajamento.” — Pedro Santos</div>
-            </div>
-            <div className="card-premium p-6">
-              <div className="text-lg font-display font-semibold mb-2">Valor percebido</div>
-              <p className="text-sm md:text-base text-muted-foreground">Experiência premium justifica preço e eleva a percepção.</p>
-              <div className="text-xs md:text-sm opacity-70 mt-3">“Valor percebido elevou imediatamente.” — Bruna Lima</div>
-            </div>
-            <div className="card-premium p-6">
-              <div className="text-lg font-display font-semibold mb-2">Autoridade</div>
-              <p className="text-sm md:text-base text-muted-foreground">Visual profissional reforça sua posição como especialista.</p>
-              <div className="text-xs md:text-sm opacity-70 mt-3">“Muito mais profissional.” — Rafael Gomes</div>
-            </div>
-            <div className="card-premium p-6">
-              <div className="text-lg font-display font-semibold mb-2">Menos reembolsos</div>
-              <p className="text-sm md:text-base text-muted-foreground">Entrega superior melhora satisfação e reduz pedidos de reembolso.</p>
-              <div className="text-xs md:text-sm opacity-70 mt-3">“Clientes elogiaram o novo formato.” — Isabela Martins</div>
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <div className="space-y-4 md:space-y-5">
+              <div className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
+                <span className="text-sm md:text-base">Gamificação, notificações e navegação fluida geram engajamento.</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
+                <span className="text-sm md:text-base">Visual premium eleva valor percebido e autoridade.</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
+                <span className="text-sm md:text-base">Marca forte e experiência moderna reforçam posicionamento.</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
+                <span className="text-sm md:text-base">Menos reembolsos e maior satisfação dos clientes.</span>
+              </div>
             </div>
           </div>
         </div>
@@ -210,7 +210,7 @@ const Index = () => {
           <div className="max-w-3xl mx-auto px-4">
             <div className="card-premium text-center border-2 border-accent">
               <div className="inline-block px-4 py-2 bg-accent text-accent-foreground rounded-full text-xs md:text-sm font-medium mb-6">
-                Preço especial de lançamento
+                Preço de lançamento por tempo limitado
               </div>
               
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-6 px-2">
