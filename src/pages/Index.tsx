@@ -355,16 +355,15 @@ const Index = () => {
       <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-primary text-primary-foreground text-center">
         <div className="section-container">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
-            <div className="text-accent text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-5 md:mb-6">
-              MEP
-            </div>
-            <div className="inline-block px-4 py-2 bg-accent text-accent-foreground rounded-full text-xs md:text-sm font-medium mb-6">
-                Preço de lançamento por tempo limitado
-              </div>
+            <img
+              src="https://s3.magoautomacoes.com.br/desing/metodoebookpremium/MEP%20LOGO%20(2).png"
+              alt="Método Ebook Premium"
+              className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto mx-auto mb-5 md:mb-6"
+            />
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 md:mb-8 leading-tight">
               Pronto para valorizar seu e‑book?
             </h2>
-            
+
             {/* Botão final removido conforme solicitado */}
             <div className="text-sm md:text-base text-primary-foreground/80 mt-4">Eleve seu conteúdo a outro nível e aumente o engajamento com um app premium em minutos.</div>
           </div>

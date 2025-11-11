@@ -20,10 +20,12 @@ export const HeroWithAurora = ({ onCTAClick }: HeroWithAuroraProps) => {
         }}
         className="relative flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 max-w-5xl mx-auto"
       >
-        <div className="mb-6 md:mb-8 inline-block text-center">
-          <div className="text-accent text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight">
-            MEP
-          </div>
+        <div className="mb-6 md:mb-8 inline-block text-center [isolation:isolate]">
+          <img
+            src="https://s3.magoautomacoes.com.br/desing/metodoebookpremium/MEP%20LOGO%20(1).png"
+            alt="Método Ebook Premium"
+            className="h-20 sm:h-28 md:h-36 lg:h-40 w-auto mx-auto"
+          />
           <div className="text-xs sm:text-sm text-muted-foreground mt-2 tracking-widest">
             MÉTODO EBOOK PREMIUM
           </div>
