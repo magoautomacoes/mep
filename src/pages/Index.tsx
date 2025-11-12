@@ -334,7 +334,16 @@ const Index = () => {
                 </div>
               </div>
               
-              <Button variant="premium" size="xl" className="w-full max-w-md mx-auto animate-fade-scale hover:scale-[1.03]" aria-label="Garantir meu app premium" onClick={() => window.open('https://pay.kiwify.com.br/VhOXJRK', '_blank')}>
+              <Button
+                variant="premium"
+                size="xl"
+                className="w-full max-w-md mx-auto animate-fade-scale hover:scale-[1.03]"
+                aria-label="Garantir meu app premium"
+                onClick={() => {
+                  const w = window.open('https://pay.kiwify.com.br/VhOXJRK', '_blank', 'noopener,noreferrer');
+                  if (w) w.opener = null;
+                }}
+              >
                 Garantir meu app
                 {" "}
                 <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]}>premium</AuroraText>

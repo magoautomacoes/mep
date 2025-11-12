@@ -28,12 +28,19 @@ export function initWebVitals(report: (metric: WebVitalsMetric) => void = consol
   };
 
   import("web-vitals")
-    .then(({ onCLS, onFID, onLCP, onINP, onTTFB }) => {
-      onCLS(send);
-      onFID(send);
-      onLCP(send);
-      onINP(send);
-      onTTFB(send);
+    .then((mod: any) => {
+      // Usa API disponível conforme a versão instalada
+      const onCLS = mod.onCLS || mod.getCLS;
+      const onFID = mod.onFID || mod.getFID; // algumas versões removem onFID
+      const onLCP = mod.onLCP || mod.getLCP;
+      const onINP = mod.onINP || mod.getINP;
+      const onTTFB = mod.onTTFB || mod.getTTFB;
+
+      onCLS && onCLS(send);
+      onFID && onFID(send);
+      onLCP && onLCP(send);
+      onINP && onINP(send);
+      onTTFB && onTTFB(send);
     })
     .catch(() => {
       // silenciosamente ignora se não carregar

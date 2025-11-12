@@ -15,29 +15,19 @@ const VturbLazy: React.FC<VturbLazyProps> = ({ playerId, scriptSrc, className, s
   const ref = React.useRef<HTMLDivElement | null>(null);
   const [initialized, setInitialized] = React.useState(false);
 
+  // Carrega o script do player imediatamente ao montar (mais robusto que lazy por viewport)
   React.useEffect(() => {
-    if (!ref.current) return;
-    const el = ref.current;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.some((e) => e.isIntersecting);
-        if (visible && !initialized) {
-          const exists = Array.from(document.scripts).some((s) => s.src === scriptSrc);
-          if (!exists) {
-            const s = document.createElement("script");
-            s.src = scriptSrc;
-            s.async = true;
-            document.head.appendChild(s);
-          }
-          setInitialized(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "200px" }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [scriptSrc, initialized]);
+    const alreadyLoaded = !!document.getElementById("vturb-smartplayer-js") || Array.from(document.scripts).some((s) => s.src === scriptSrc);
+    if (!alreadyLoaded) {
+      const s = document.createElement("script");
+      s.src = scriptSrc;
+      s.async = true;
+      s.onload = () => setInitialized(true);
+      document.head.appendChild(s);
+    } else {
+      setInitialized(true);
+    }
+  }, [scriptSrc]);
 
   return (
     <div ref={ref} className={className} style={style} data-testid="vturb-container">
