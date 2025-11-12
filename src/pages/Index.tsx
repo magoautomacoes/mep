@@ -10,6 +10,7 @@ import FAQs from "@/components/ui/faqs";
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import { AuroraText } from "@/components/ui/aurora-text";
 import { LineShadowText } from "@/components/ui/line-shadow-text";
+import IntegrationsCard from "@/components/ui/integrations";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -215,6 +216,11 @@ const Index = () => {
               </div>
           </div>
         </div>
+      </section>
+
+      {/* Integrações (vitrine de compatibilidade) */}
+      <section id="integrations" className="my-20 mx-auto max-w-6xl px-6">
+        <IntegrationsCard />
       </section>
 
       {/* Depoimentos (layout em cascata) */}
