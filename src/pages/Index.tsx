@@ -41,12 +41,13 @@ const Index = () => {
                 {" "}que engaja e valoriza seu conteúdo.
               </p>
             </div>
-            <div className="card-premium border-2 border-border rounded-xl overflow-hidden shadow-sm px-5 sm:px-8">
+            <div className="card-premium border-2 border-border rounded-xl overflow-hidden shadow-sm px-0 sm:px-8 -mx-6 sm:mx-0">
               <VturbLazy
                 playerId="vid-69139e76bd5d00c99be1793e"
                 scriptSrc="https://scripts.converteai.net/7b4fdf64-05e0-4e69-9e1d-b9778193a90f/players/69139e76bd5d00c99be1793e/v4/player.js"
-                className="mx-auto"
-                frameClassName="max-w-[680px] sm:max-w-[760px] md:max-w-[960px]"
+                className="w-full"
+                frameClassName="w-full sm:max-w-[760px] md:max-w-[960px] lg:max-w-[1200px] xl:max-w-[1360px]"
+                posterSrc="/placeholder.svg"
               />
             </div>
             <div className="text-xs md:text-sm text-muted-foreground mt-3 text-center">Compatível com PC, Android e iOS.</div>
