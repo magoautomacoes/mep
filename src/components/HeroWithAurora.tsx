@@ -63,6 +63,10 @@ export const HeroWithAurora = ({ onCTAClick }: HeroWithAuroraProps) => {
             {" "}agora
           </Button>
         </div>
+
+        <div className="text-xs md:text-sm text-muted-foreground mt-3 text-center px-4">
+          Funciona com copiar e colar, mesmo se você nunca programou.
+        </div>
       </motion.div>
     </AuroraBackground>
   );

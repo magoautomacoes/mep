@@ -40,7 +40,7 @@ const Index = () => {
         <div className="section-container">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <div className="text-center mb-4 md:mb-5">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">Veja o MEP em ação</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">Veja o Método Ebook Premium em ação (MEP)</h2>
               <p className="text-sm md:text-base text-muted-foreground mt-2">
                 Demonstração rápida: do PDF comum ao app
                 {" "}
@@ -51,7 +51,7 @@ const Index = () => {
             <div className="card-premium border-2 border-border rounded-xl overflow-hidden shadow-sm">
               <vturb-smartplayer id="vid-69139e76bd5d00c99be1793e" style={{ display: "block", margin: "0 auto", width: "100%" }}></vturb-smartplayer>
             </div>
-            <div className="text-xs md:text-sm text-muted-foreground mt-3 text-center">Compatível com desktop e mobile.</div>
+            <div className="text-xs md:text-sm text-muted-foreground mt-3 text-center">Compatível com PC, Android e iOS.</div>
           </div>
         </div>
       </section>
@@ -277,8 +277,8 @@ const Index = () => {
               </h2>
               
               <div className="mb-8">
-                <div className="text-xl md:text-2xl text-muted-foreground line-through mb-2">
-                  R$ 197,00
+                <div className="text-xl md:text-2xl text-muted-foreground mb-2">
+                  De <span className="line-through">R$ 197,00</span> por
                 </div>
                 <div className="mb-2">
                   <AnimatedShinyText className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-primary">
@@ -327,7 +327,7 @@ const Index = () => {
                 {" "}
                 <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]}>premium</AuroraText>
               </Button>
-              <div className="text-xs md:text-sm text-muted-foreground mt-3">Preço de lançamento por tempo limitado. Pagamento único. Acesso imediato. Garantia de satisfação ou reembolso 100%.</div>
+              <div className="text-xs md:text-sm text-muted-foreground mt-3">Valor promocional de lançamento por tempo limitado. Pagamento único. Acesso imediato. Garantia de satisfação ou reembolso 100%.</div>
             </div>
           </div>
         </div>
