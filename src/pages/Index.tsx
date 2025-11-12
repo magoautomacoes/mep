@@ -39,7 +39,7 @@ const Index = () => {
       {/* Seção de Vídeo (VTurb) redesenhada */}
       <section className="py-16 sm:py-20 md:py-24 bg-muted/30">
         <div className="section-container">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="max-w-5xl mx-auto px-6">
             <div className="text-center mb-4 md:mb-5">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold">Veja o Método Ebook Premium em ação (MEP)</h2>
               <p className="text-sm md:text-base text-muted-foreground mt-2">
@@ -60,7 +60,7 @@ const Index = () => {
       {/* Demonstração interativa: Antes vs Depois */}
       <section className="py-12 sm:py-14 md:py-16 bg-muted/30">
         <div className="section-container">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto px-6">
             <div className="text-center mb-6">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold">
                 Arraste para comparar: PDF comum x App
@@ -94,8 +94,8 @@ const Index = () => {
       {/* O problema */}
       <section className="py-16 sm:py-20 md:py-24">
         <div className="section-container">
-          <div className="max-w-3xl mx-auto text-center px-4 sm:px-6 md:px-8 space-y-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4">O problema</h2>
+          <div className="max-w-4xl mx-auto text-center px-6 space-y-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4 animate-fade-scale">O problema</h2>
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
               Seu conteúdo em PDF parece genérico, tem baixo valor percebido e acaba perdido na pasta de downloads. Isso reduz engajamento e vendas.
             </p>
@@ -106,8 +106,8 @@ const Index = () => {
       {/* A solução */}
       <section className="py-16 sm:py-20 md:py-24 bg-muted/30">
         <div className="section-container">
-          <div className="max-w-3xl mx-auto text-center px-4 sm:px-6 md:px-8 space-y-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4">A solução</h2>
+          <div className="max-w-4xl mx-auto text-center px-6 space-y-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4 animate-fade-scale">A solução</h2>
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
               Com o <strong>Método Ebook Premium (MEP)</strong>, você converte seu PDF em um app interativo com:
             </p>
@@ -121,7 +121,7 @@ const Index = () => {
               Tudo isso <strong>sem programação</strong>, seguindo um passo a passo de copiar e colar.
             </p>
             <div className="mt-4">
-              <Button variant="premium" size="xl" onClick={scrollToCTA}>Transformar meu e‑book agora</Button>
+              <Button variant="premium" size="xl" className="animate-fade-scale hover:scale-[1.03]" onClick={scrollToCTA}>Transformar meu e‑book agora</Button>
             </div>
           </div>
         </div>
@@ -130,15 +130,15 @@ const Index = () => {
       {/* Before x After Section */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-muted/30">
         <div className="section-container">
-          <div className="text-center mb-10 sm:mb-12 md:mb-16 px-4 sm:px-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3 md:mb-4 leading-tight">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16 px-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3 md:mb-4 leading-tight animate-fade-scale">
               De PDF esquecido para<br className="hidden sm:inline" />
               <span className="sm:hidden"> </span>
               <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]} className="tracking-tight">experiência premium.</AuroraText>
             </h2>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 max-w-6xl mx-auto px-6">
             {/* Before */}
             <div className="card-premium border-2 border-border h-full">
               <div className="flex items-center gap-3 mb-5 md:mb-6">
@@ -189,10 +189,10 @@ const Index = () => {
       {/* Benefícios em bullets concisos */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32">
         <div className="section-container">
-          <div className="text-center mb-10 sm:mb-12 md:mb-16 px-4 sm:px-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold">Benefícios</h2>
+          <div className="text-center mb-10 sm:mb-12 md:mb-16 px-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold animate-fade-scale">Benefícios</h2>
           </div>
-          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto px-6">
               <div className="space-y-4 md:space-y-5">
                 <div className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
@@ -233,13 +233,13 @@ const Index = () => {
       {/* Para quem é */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32">
         <div className="section-container">
-          <div className="text-center mb-10 sm:mb-12 md:mb-16 px-4 sm:px-6">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16 px-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3 md:mb-4">
               Este método é para você que:
             </h2>
           </div>
           
-          <div className="max-w-4xl mx-auto space-y-4 md:space-y-6 px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto space-y-4 md:space-y-6 px-6">
             <div className="card-premium flex items-start gap-3 md:gap-4">
               <Users className="w-6 h-6 md:w-7 md:h-7 text-accent flex-shrink-0 mt-1" />
               <div>
@@ -272,8 +272,8 @@ const Index = () => {
       {/* Offer Section */}
       <section id="offer" className="py-16 sm:py-20 md:py-28 lg:py-32 bg-muted/30">
         <div className="section-container">
-          <div className="max-w-3xl mx-auto px-4">
-            <div className="card-premium text-center border-2 border-accent">
+          <div className="max-w-4xl mx-auto px-6">
+            <div className="card-premium text-center border-2 border-accent shadow-premium rounded-2xl">
               <div className="inline-block px-4 py-2 bg-accent text-accent-foreground rounded-full text-xs md:text-sm font-medium mb-6">
                 Preço de lançamento por tempo limitado
               </div>
@@ -349,10 +349,10 @@ const Index = () => {
       {/* FAQ (posicionado abaixo da oferta) */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-muted/30">
         <div className="section-container">
-          <div className="text-center mb-10 md:mb-12 px-4 sm:px-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">Perguntas Frequentes</h2>
+          <div className="text-center mb-10 md:mb-12 px-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold animate-fade-scale">Perguntas Frequentes</h2>
           </div>
-          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto px-6">
             <FAQs />
           </div>
         </div>
@@ -361,10 +361,10 @@ const Index = () => {
       {/* Como funciona (3 passos) */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32">
         <div className="section-container">
-          <div className="text-center mb-10 md:mb-12 px-4 sm:px-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">Como funciona</h2>
+          <div className="text-center mb-10 md:mb-12 px-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold animate-fade-scale">Como funciona</h2>
           </div>
-          <div className="max-w-4xl mx-auto grid sm:grid-cols-3 gap-6 md:gap-8 lg:gap-10 px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto grid sm:grid-cols-3 gap-6 md:gap-8 lg:gap-10 px-6">
             <div className="card-premium text-center">
               <div className="text-3xl font-display font-bold text-accent mb-2">01</div>
               <div className="text-sm md:text-base font-medium mb-1">Importe o template</div>
@@ -392,7 +392,7 @@ const Index = () => {
       {/* Final CTA Section */}
       <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-primary text-primary-foreground text-center">
         <div className="section-container">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto px-6">
             <img
               src="https://s3.magoautomacoes.com.br/desing/metodoebookpremium/MEP%20LOGO%20(2).png"
               alt="Método Ebook Premium"

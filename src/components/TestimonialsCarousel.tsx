@@ -60,7 +60,7 @@ export const TestimonialsCarousel: React.FC = () => {
                   <div className="p-6 rounded-3xl border border-border/60 bg-card/50 backdrop-blur-sm shadow-lg shadow-primary/10">
                     <div className="text-sm md:text-base leading-relaxed">{t.text}</div>
                     <div className="flex items-center gap-3 mt-4">
-                      <img src={t.image} alt={t.name} className="h-10 w-10 rounded-full" />
+                      <img src={t.image} alt={t.name} className="h-10 w-10 rounded-full" loading="lazy" decoding="async" />
                       <div className="flex flex-col">
                         <div className="font-medium tracking-tight leading-5">{t.name}</div>
                         <div className="leading-5 opacity-60 tracking-tight text-sm">{t.role}</div>

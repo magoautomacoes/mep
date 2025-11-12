@@ -19,7 +19,7 @@ export const HeroWithAurora = ({ onCTAClick }: HeroWithAuroraProps) => {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="relative grid justify-items-center px-4 sm:px-6 md:px-8 py-12 sm:py-14 md:py-16 max-w-5xl mx-auto gap-y-4 sm:gap-y-5 md:gap-y-6"
+        className="relative grid justify-items-center max-w-4xl mx-auto px-6 py-12 md:py-20 text-center gap-y-4 sm:gap-y-5 md:gap-y-6"
       >
         <div className="inline-block text-center [isolation:isolate]">
           <img
@@ -31,7 +31,7 @@ export const HeroWithAurora = ({ onCTAClick }: HeroWithAuroraProps) => {
         </div>
 
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[5rem] font-bold leading-tight text-center text-primary tracking-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[3.8rem] xl:text-[4.2rem] font-bold leading-[1.15] text-center text-primary tracking-tight mb-6">
             Transforme seu e‑book em um app{" "}
             <AuroraText
               colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]}
@@ -40,7 +40,7 @@ export const HeroWithAurora = ({ onCTAClick }: HeroWithAuroraProps) => {
             </AuroraText>{" "}
             em minutos — sem programar.
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
+          <p className="text-sm sm:text-base text-muted-foreground text-center mb-8">
             PDFs são esquecidos; um app{" "}
             <AuroraText
               colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]}
@@ -51,7 +51,7 @@ export const HeroWithAurora = ({ onCTAClick }: HeroWithAuroraProps) => {
           </p>
         </div>
 
-        <div className="w-full max-w-md px-4">
+        <div className="w-full max-w-md px-4 mt-4 md:mt-6 text-center">
           <Button onClick={onCTAClick} aria-label="Quero meu app premium agora" variant="premium" size="lg" className="w-full sm:w-auto text-base md:text-lg animate-fade-scale hover:scale-[1.03]">
             Quero meu app
             {" "}
