@@ -5,13 +5,14 @@ import { HeroWithAurora } from "@/components/HeroWithAurora";
 import { BeforeAfterCompare } from "@/components/ui/before-after-compare";
 import { MobileFrame } from "@/components/ui/mobile-frame";
 import Footer from "@/components/ui/footer";
-import { TestimonialsSection } from "@/components/TestimonialsSection";
-import FAQs from "@/components/ui/faqs";
+// Lazy-loaded sections (below the fold)
+import React, { Suspense, lazy, useEffect } from "react";
+const TestimonialsSectionLazy = lazy(() => import("@/components/TestimonialsSection").then(m => ({ default: m.TestimonialsSection })));
+const FAQsLazy = lazy(() => import("@/components/ui/faqs"));
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import { AuroraText } from "@/components/ui/aurora-text";
 import { LineShadowText } from "@/components/ui/line-shadow-text";
-import IntegrationsCard from "@/components/ui/integrations";
-import { useEffect } from "react";
+const IntegrationsCardLazy = lazy(() => import("@/components/ui/integrations"));
 
 const Index = () => {
   const scrollToCTA = () => {
@@ -37,7 +38,7 @@ const Index = () => {
       <HeroWithAurora onCTAClick={scrollToCTA} />
 
       {/* Seção de Vídeo (VTurb) redesenhada */}
-      <section className="py-16 sm:py-20 md:py-24 bg-muted/30">
+      <section className="py-16 sm:py-20 md:py-24 bg-muted/30" style={{ contentVisibility: "auto", containIntrinsicSize: "800px" }}>
         <div className="section-container">
           <div className="max-w-5xl mx-auto px-6">
             <div className="text-center mb-4 md:mb-5">
@@ -58,7 +59,7 @@ const Index = () => {
       </section>
 
       {/* Demonstração interativa: Antes vs Depois */}
-      <section className="py-12 sm:py-14 md:py-16 bg-muted/30">
+      <section className="py-12 sm:py-14 md:py-16 bg-muted/30" style={{ contentVisibility: "auto", containIntrinsicSize: "700px" }}>
         <div className="section-container">
           <div className="max-w-4xl mx-auto px-6">
             <div className="text-center mb-6">
@@ -92,7 +93,7 @@ const Index = () => {
 
 
       {/* O problema */}
-      <section className="py-16 sm:py-20 md:py-24">
+      <section className="py-16 sm:py-20 md:py-24" style={{ contentVisibility: "auto", containIntrinsicSize: "800px" }}>
         <div className="section-container">
           <div className="max-w-4xl mx-auto text-center px-6 space-y-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4 animate-fade-scale">O problema</h2>
@@ -104,7 +105,7 @@ const Index = () => {
       </section>
 
       {/* A solução */}
-      <section className="py-16 sm:py-20 md:py-24 bg-muted/30">
+      <section className="py-16 sm:py-20 md:py-24 bg-muted/30" style={{ contentVisibility: "auto", containIntrinsicSize: "800px" }}>
         <div className="section-container">
           <div className="max-w-4xl mx-auto text-center px-6 space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4 animate-fade-scale">A solução</h2>
@@ -128,7 +129,7 @@ const Index = () => {
       </section>
 
       {/* Before x After Section */}
-      <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-muted/30">
+      <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-muted/30" style={{ contentVisibility: "auto", containIntrinsicSize: "900px" }}>
         <div className="section-container">
           <div className="text-center mb-10 sm:mb-12 md:mb-16 px-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3 md:mb-4 leading-tight animate-fade-scale">
@@ -187,7 +188,7 @@ const Index = () => {
       
 
       {/* Benefícios em bullets concisos */}
-      <section className="py-16 sm:py-20 md:py-28 lg:py-32">
+      <section className="py-16 sm:py-20 md:py-28 lg:py-32" style={{ contentVisibility: "auto", containIntrinsicSize: "900px" }}>
         <div className="section-container">
           <div className="text-center mb-10 sm:mb-12 md:mb-16 px-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold animate-fade-scale">Benefícios</h2>
@@ -219,19 +220,23 @@ const Index = () => {
       </section>
 
       {/* Integrações (vitrine de compatibilidade) */}
-      <section id="integrations" className="my-20 mx-auto max-w-6xl px-6">
-        <IntegrationsCard />
+      <section id="integrations" className="my-20 mx-auto max-w-6xl px-6" style={{ contentVisibility: "auto", containIntrinsicSize: "800px" }}>
+<Suspense fallback={<div className="h-40" />}> 
+  <IntegrationsCardLazy />
+</Suspense>
       </section>
 
       {/* Depoimentos (layout em cascata) */}
-      <TestimonialsSection />
+<Suspense fallback={<div className="h-40" />}> 
+  <TestimonialsSectionLazy />
+</Suspense>
 
       
 
       
 
       {/* Para quem é */}
-      <section className="py-16 sm:py-20 md:py-28 lg:py-32">
+      <section className="py-16 sm:py-20 md:py-28 lg:py-32" style={{ contentVisibility: "auto", containIntrinsicSize: "900px" }}>
         <div className="section-container">
           <div className="text-center mb-10 sm:mb-12 md:mb-16 px-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3 md:mb-4">
@@ -270,7 +275,7 @@ const Index = () => {
       
 
       {/* Offer Section */}
-      <section id="offer" className="py-16 sm:py-20 md:py-28 lg:py-32 bg-muted/30">
+      <section id="offer" className="py-16 sm:py-20 md:py-28 lg:py-32 bg-muted/30" style={{ contentVisibility: "auto", containIntrinsicSize: "900px" }}>
         <div className="section-container">
           <div className="max-w-4xl mx-auto px-6">
             <div className="card-premium text-center border-2 border-accent shadow-premium rounded-2xl">
@@ -347,19 +352,21 @@ const Index = () => {
       </section>
 
       {/* FAQ (posicionado abaixo da oferta) */}
-      <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-muted/30">
+      <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-muted/30" style={{ contentVisibility: "auto", containIntrinsicSize: "900px" }}>
         <div className="section-container">
           <div className="text-center mb-10 md:mb-12 px-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold animate-fade-scale">Perguntas Frequentes</h2>
           </div>
           <div className="max-w-4xl mx-auto px-6">
-            <FAQs />
+<Suspense fallback={<div className="h-40" />}> 
+  <FAQsLazy />
+</Suspense>
           </div>
         </div>
       </section>
 
       {/* Como funciona (3 passos) */}
-      <section className="py-16 sm:py-20 md:py-28 lg:py-32">
+      <section className="py-16 sm:py-20 md:py-28 lg:py-32" style={{ contentVisibility: "auto", containIntrinsicSize: "900px" }}>
         <div className="section-container">
           <div className="text-center mb-10 md:mb-12 px-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold animate-fade-scale">Como funciona</h2>
@@ -390,7 +397,7 @@ const Index = () => {
       
 
       {/* Final CTA Section */}
-      <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-primary text-primary-foreground text-center">
+      <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-primary text-primary-foreground text-center" style={{ contentVisibility: "auto", containIntrinsicSize: "700px" }}>
         <div className="section-container">
           <div className="max-w-4xl mx-auto px-6">
             <img
