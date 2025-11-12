@@ -37,7 +37,7 @@ export default function FAQs({ items, className }: FAQsProps) {
         id: "item-4",
         question: "Quanto tempo leva para colocar no ar?",
         answer:
-          "Em média, entre 60 e 120 minutos, seguindo nosso passo a passo.",
+          "Depende da similaridade com o conteúdo‑modelo e do uso de IA. Em geral, leva de 10 a 120 minutos para personalizar e publicar o app.",
       },
       {
         id: "item-5",
@@ -45,14 +45,38 @@ export default function FAQs({ items, className }: FAQsProps) {
         answer:
           "Oferecemos garantia de satisfação ou reembolso integral.",
       },
+      {
+        id: "item-6",
+        question: "Integra com qualquer plataforma?",
+        answer:
+          "Sim. O MEP é compatível com todas as plataformas do mercado que utilizam Webhook (Hotmart, Eduzz, Kiwify, Cakto, Shopify, WooCommerce e outras).",
+      },
+      {
+        id: "item-7",
+        question: "Qual é o investimento necessário?",
+        answer:
+          "Além da compra do método, você só precisará de um domínio (≈ R$ 40/ano) e um servidor VPS (≈ R$ 35/mês — o preço de um lanche!).",
+      },
+      {
+        id: "item-8",
+        question: "Posso revender? Você disponibiliza templates?",
+        answer:
+          "Sim! Você pode revender e terá acesso a templates prontos e videoaulas para facilitar o processo.",
+      },
+      {
+        id: "item-9",
+        question: "Essas ferramentas são suas? Como funciona?",
+        answer:
+          "Sim! Todas as ferramentas foram desenvolvidas por mim, e ao adquirir o método você recebe acesso completo e direito vitalício de uso. Isso significa que o app será seu para personalizar, publicar e utilizar livremente, sem depender de terceiros.",
+      },
     ];
 
   return (
     <div className={className}>
-      <Accordion type="single" collapsible className="w-full space-y-2 md:space-y-3">
+      <Accordion type="single" collapsible className="w-full space-y-2.5 md:space-y-3.5">
         {faqItems.map((item) => (
-          <AccordionItem key={item.id} value={item.id} className="last:border-b-0 py-1.5 md:py-2.5">
-            <AccordionTrigger className="text-base md:text-lg font-display font-semibold tracking-tight text-foreground py-3 md:py-4 hover:no-underline">
+          <AccordionItem key={item.id} value={item.id} className="last:border-b-0 py-2 md:py-3">
+            <AccordionTrigger className="text-base md:text-lg font-body font-semibold leading-snug tracking-normal text-foreground py-3 md:py-3.5 hover:no-underline">
               {item.question}
             </AccordionTrigger>
             <AccordionContent className="text-sm md:text-base text-muted-foreground leading-relaxed pt-1.5 md:pt-2">

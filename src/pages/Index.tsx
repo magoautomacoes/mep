@@ -41,7 +41,7 @@ const Index = () => {
         <div className="section-container">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <div className="text-center mb-4 md:mb-5">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">Veja o Método Ebook Premium em ação (MEP)</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold">Veja o Método Ebook Premium em ação (MEP)</h2>
               <p className="text-sm md:text-base text-muted-foreground mt-2">
                 Demonstração rápida: do PDF comum ao app
                 {" "}
@@ -278,7 +278,7 @@ const Index = () => {
                 Preço de lançamento por tempo limitado
               </div>
               
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-6 px-2">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 px-2">
                 Transforme seu <LineShadowText shadowColor="hsl(var(--accent))">e‑book</LineShadowText> hoje
               </h2>
               
@@ -305,11 +305,11 @@ const Index = () => {
               <div className="space-y-4 md:space-y-5 mb-8 md:mb-10 text-left max-w-md mx-auto px-2">
                 <div className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
-                  <span className="text-sm md:text-base">Template completo pronto para usar</span>
+                  <span className="text-sm md:text-base">Todo o código-fonte do aplicativo</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
-                  <span className="text-sm md:text-base">Método passo a passo copy & paste</span>
+                  <span className="text-sm md:text-base">Método passo a passo copiar & colar</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
@@ -324,16 +324,23 @@ const Index = () => {
                 </div>
                 <div className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
-                  <span className="text-sm md:text-base">Bônus: telas + checklist (R$294 de valor percebido)</span>
+                  <span className="text-sm md:text-base">Bônus: Aprenda automações no n8n</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
+                  <span className="text-sm md:text-base">Bônus: Templates das melhores automações do mercado</span>
                 </div>
               </div>
               
-              <Button variant="premium" size="xl" className="w-full max-w-md mx-auto" aria-label="Garantir meu app premium" onClick={() => window.open('https://pay.kiwify.com.br/VhOXJRK', '_blank')}>
+              <Button variant="premium" size="xl" className="w-full max-w-md mx-auto animate-fade-scale hover:scale-[1.03]" aria-label="Garantir meu app premium" onClick={() => window.open('https://pay.kiwify.com.br/VhOXJRK', '_blank')}>
                 Garantir meu app
                 {" "}
                 <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]}>premium</AuroraText>
               </Button>
-              <div className="text-xs md:text-sm text-muted-foreground mt-3">Valor promocional de lançamento por tempo limitado. Pagamento único. Acesso imediato. Garantia de satisfação ou reembolso 100%.</div>
+              <div className="mt-3 flex justify-center">
+                <Badge variant="outline" className="px-3 py-1 rounded-full">💳 Compra segura — 7 dias de garantia</Badge>
+              </div>
+              <div className="text-xs md:text-sm text-muted-foreground mt-3">Pagamento único. Acesso vitalício. Garantia de satisfação ou reembolso 100 %.</div>
             </div>
           </div>
         </div>
@@ -343,7 +350,7 @@ const Index = () => {
       <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-muted/30">
         <div className="section-container">
           <div className="text-center mb-10 md:mb-12 px-4 sm:px-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">FAQ</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">Perguntas Frequentes</h2>
           </div>
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <FAQs />
@@ -375,7 +382,7 @@ const Index = () => {
             </div>
           </div>
           <div className="text-center mt-8">
-            <Button variant="premium" size="xl" onClick={scrollToCTA} aria-label="Quero transformar meu e‑book agora">Quero transformar meu e‑book agora</Button>
+            <Button variant="premium" size="xl" className="animate-fade-scale hover:scale-[1.03]" onClick={scrollToCTA} aria-label="Quero transformar meu e‑book agora">Quero transformar meu e‑book agora</Button>
           </div>
         </div>
       </section>
@@ -389,6 +396,7 @@ const Index = () => {
             <img
               src="https://s3.magoautomacoes.com.br/desing/metodoebookpremium/MEP%20LOGO%20(2).png"
               alt="Método Ebook Premium"
+              loading="lazy" decoding="async"
               className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto mx-auto mb-5 md:mb-6"
             />
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 md:mb-8 leading-tight">

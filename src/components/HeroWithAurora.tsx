@@ -25,11 +25,12 @@ export const HeroWithAurora = ({ onCTAClick }: HeroWithAuroraProps) => {
           <img
             src="https://s3.magoautomacoes.com.br/desing/metodoebookpremium/MEP%20LOGO%20(1).png"
             alt="Método Ebook Premium"
+            loading="lazy" decoding="async"
             className="h-20 sm:h-28 md:h-36 lg:h-40 w-auto mx-auto"
           />
         </div>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-2 sm:mb-3 md:mb-4 leading-tight text-center text-foreground px-2">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold mb-2 sm:mb-3 md:mb-4 leading-tight text-center text-foreground px-2">
           Transforme seu e‑book em um app
           {" "}
           <AuroraText
@@ -52,7 +53,7 @@ export const HeroWithAurora = ({ onCTAClick }: HeroWithAuroraProps) => {
         </p>
 
         <div className="w-full max-w-md px-4">
-          <Button onClick={onCTAClick} aria-label="Quero meu app premium agora" variant="premium" size="lg" className="w-full sm:w-auto text-base md:text-lg">
+          <Button onClick={onCTAClick} aria-label="Quero meu app premium agora" variant="premium" size="lg" className="w-full sm:w-auto text-base md:text-lg animate-fade-scale hover:scale-[1.03]">
             Quero meu app
             {" "}
             <AuroraText
