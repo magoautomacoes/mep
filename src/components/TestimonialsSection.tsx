@@ -83,13 +83,13 @@ export const TestimonialsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
-          className="flex flex-col items-center justify-center max-w-[540px] mx-auto"
+          className="flex flex-col items-center justify-center max-w-[540px] xl:max-w-[1200px] mx-auto"
         >
           <div className="flex justify-center">
             <Badge variant="outline" className="px-4 py-1 rounded-lg">Depoimentos</Badge>
           </div>
 
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter mt-5">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter mt-5 xl:truncate">
             O que nossos clientes dizem
           </h2>
           <p className="text-center mt-5 opacity-75">
