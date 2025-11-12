@@ -75,6 +75,7 @@ export const BeforeAfterCompare: React.FC<BeforeAfterCompareProps> = ({
           "relative w-full overflow-hidden rounded-xl border mx-auto",
           containerClassName || "h-64 sm:h-80 md:h-96",
         )}
+        style={{ touchAction: "none" }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
@@ -150,7 +151,7 @@ export const BeforeAfterCompare: React.FC<BeforeAfterCompareProps> = ({
             role="slider"
             tabIndex={0}
             onKeyDown={onKeyDown}
-            className="-ml-3 rounded-full border bg-background/80 backdrop-blur-sm shadow w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center ring-0 group-hover:ring-2 group-hover:ring-accent transition-all"
+            className="-ml-3 rounded-full border bg-background/80 backdrop-blur-sm shadow w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center ring-0 group-hover:ring-2 group-hover:ring-accent transition-all"
           >
             <span className="block w-1.5 h-1.5 rounded-full bg-foreground/70" />
           </button>

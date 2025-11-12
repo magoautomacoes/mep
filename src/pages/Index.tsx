@@ -12,6 +12,7 @@ const FAQsLazy = lazy(() => import("@/components/ui/faqs"));
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import { AuroraText } from "@/components/ui/aurora-text";
 import { LineShadowText } from "@/components/ui/line-shadow-text";
+import VturbLazy from "@/components/ui/vturb-lazy";
 const IntegrationsCardLazy = lazy(() => import("@/components/ui/integrations"));
 
 const Index = () => {
@@ -20,17 +21,7 @@ const Index = () => {
     ctaSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // Carrega o player VTurb
-  useEffect(() => {
-    const src = "https://scripts.converteai.net/7b4fdf64-05e0-4e69-9e1d-b9778193a90f/players/69139e76bd5d00c99be1793e/v4/player.js";
-    const already = Array.from(document.scripts).some(s => s.src === src);
-    if (!already) {
-      const s = document.createElement("script");
-      s.src = src;
-      s.async = true;
-      document.head.appendChild(s);
-    }
-  }, []);
+  // Player VTurb passa a carregar apenas quando a seção entra na viewport (componente VturbLazy)
 
   return (
     <div className="min-h-screen">
@@ -50,8 +41,13 @@ const Index = () => {
                 {" "}que engaja e valoriza seu conteúdo.
               </p>
             </div>
-            <div className="card-premium border-2 border-border rounded-xl overflow-hidden shadow-sm">
-              <vturb-smartplayer id="vid-69139e76bd5d00c99be1793e" style={{ display: "block", margin: "0 auto", width: "100%" }}></vturb-smartplayer>
+            <div className="card-premium border-2 border-border rounded-xl overflow-hidden shadow-sm px-5 sm:px-8">
+              <VturbLazy
+                playerId="vid-69139e76bd5d00c99be1793e"
+                scriptSrc="https://scripts.converteai.net/7b4fdf64-05e0-4e69-9e1d-b9778193a90f/players/69139e76bd5d00c99be1793e/v4/player.js"
+                className="mx-auto"
+                frameClassName="max-w-[680px] sm:max-w-[760px] md:max-w-[960px]"
+              />
             </div>
             <div className="text-xs md:text-sm text-muted-foreground mt-3 text-center">Compatível com PC, Android e iOS.</div>
           </div>
@@ -62,14 +58,14 @@ const Index = () => {
       <section className="py-12 sm:py-14 md:py-16 bg-muted/30" style={{ contentVisibility: "auto", containIntrinsicSize: "700px" }}>
         <div className="section-container">
           <div className="max-w-4xl mx-auto px-6">
-            <div className="text-center mb-6">
+            <div className="text-center mb-8">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold">
                 Arraste para comparar: PDF comum x App
                 {" "}
                 <AuroraText colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]}>premium</AuroraText>
               </h2>
             </div>
-            <MobileFrame className="mx-auto w-[300px] sm:w-[340px] md:w-[380px] h-[600px] sm:h-[680px] md:h-[760px]">
+            <MobileFrame className="mx-auto w-[340px] sm:w-[360px] md:w-[400px] h-[640px] sm:h-[720px] md:h-[800px] mb-6">
               <BeforeAfterCompare
                 className="w-full h-full"
                 containerClassName="h-full"
