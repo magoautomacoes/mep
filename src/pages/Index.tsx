@@ -12,7 +12,7 @@ const FAQsLazy = lazy(() => import("@/components/ui/faqs"));
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import { AuroraText } from "@/components/ui/aurora-text";
 import { LineShadowText } from "@/components/ui/line-shadow-text";
-import VTurbVideo from "@/components/VTurbVideo";
+import { YouTubeFacade } from "@/components/videos";
 const IntegrationsCardLazy = lazy(() => import("@/components/ui/integrations"));
 
 const Index = () => {
@@ -41,11 +41,7 @@ const Index = () => {
                 {" "}que engaja e valoriza seu conteúdo.
               </p>
             </div>
-            <VTurbVideo
-              accountId="7b4fdf64-05e0-4e69-9e1d-b9778193a90f"
-              playerId="69139e76bd5d00c99be1793e"
-              className="w-full"
-            />
+            <YouTubeFacade url="https://youtu.be/5F0pU3zkiSw" className="w-full" />
             <div className="text-xs md:text-sm text-muted-foreground mt-3 text-center">Compatível com PC, Android e iOS.</div>
           </div>
         </div>

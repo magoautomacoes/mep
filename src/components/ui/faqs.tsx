@@ -52,12 +52,6 @@ export default function FAQs({ items, className }: FAQsProps) {
           "Sim. O MEP é compatível com todas as plataformas do mercado que utilizam Webhook (Hotmart, Eduzz, Kiwify, Cakto, Shopify, WooCommerce e outras).",
       },
       {
-        id: "item-7",
-        question: "Qual é o investimento necessário?",
-        answer:
-          "Além da compra do método, você só precisará de um domínio (≈ R$ 40/ano) e um servidor VPS (≈ R$ 35/mês — o preço de um lanche!).",
-      },
-      {
         id: "item-8",
         question: "Posso revender? Você disponibiliza templates?",
         answer:

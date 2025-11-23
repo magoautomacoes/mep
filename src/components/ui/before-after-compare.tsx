@@ -164,12 +164,12 @@ export const BeforeAfterCompare: React.FC<BeforeAfterCompareProps> = ({
 
         {/* Labels */}
         <div className="absolute left-3 top-3 z-10">
-          <span className="px-2 py-1 text-xs sm:text-sm rounded bg-background/80 border shadow">
+          <span id="before-label" className="px-2 py-1 text-xs sm:text-sm rounded bg-background/80 border shadow">
             {beforeLabel}
           </span>
         </div>
         <div className="absolute right-3 top-3 z-10">
-          <span className="px-2 py-1 text-xs sm:text-sm rounded bg-background/80 border shadow">
+          <span id="after-label" className="px-2 py-1 text-xs sm:text-sm rounded bg-background/80 border shadow">
             {afterLabel}
           </span>
         </div>
@@ -184,9 +184,14 @@ export const BeforeAfterCompare: React.FC<BeforeAfterCompareProps> = ({
             type="button"
             aria-label="Arrastar comparação"
             role="slider"
+            aria-orientation="horizontal"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={Math.round(pos * 100)}
+            aria-describedby="before-label after-label"
             tabIndex={0}
             onKeyDown={onKeyDown}
-            className="-ml-3 rounded-full border bg-background/80 backdrop-blur-sm shadow w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center ring-0 group-hover:ring-2 group-hover:ring-accent transition-all"
+            className="-ml-3 rounded-full border bg-background/80 backdrop-blur-sm shadow w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center ring-0 focus-visible:ring-2 focus-visible:ring-accent group-hover:ring-2 group-hover:ring-accent transition-all"
           >
             <span className="block w-1.5 h-1.5 rounded-full bg-foreground/70" />
           </button>

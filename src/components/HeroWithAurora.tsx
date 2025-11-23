@@ -44,7 +44,7 @@ export const HeroWithAurora = ({ onCTAClick }: HeroWithAuroraProps) => {
             </AuroraText>{" "}
             em minutos — sem programar.
           </h1>
-          <p className="text-sm sm:text-base text-muted-foreground text-center mb-8">
+          <p className="text-sm sm:text-base text-foreground/90 text-center mb-8">
             PDFs são esquecidos; um app{" "}
             <AuroraText
               colors={["hsl(var(--accent))", "hsl(var(--soft-blue))", "hsl(var(--primary))", "hsl(var(--accent))"]}
@@ -68,7 +68,7 @@ export const HeroWithAurora = ({ onCTAClick }: HeroWithAuroraProps) => {
           </Button>
         </div>
 
-        <div className="text-xs md:text-sm text-muted-foreground mt-3 text-center px-4">
+        <div className="text-xs md:text-sm text-foreground/80 mt-3 text-center px-4">
           Funciona com copiar e colar, mesmo se você nunca programou.
         </div>
       </motion.div>

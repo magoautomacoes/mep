@@ -58,6 +58,7 @@ export function IntegrationsCard({ className }: { className?: string }) {
                   )}
                   loading="lazy"
                   decoding="async"
+                  sizes={isLastlink ? "(max-width: 768px) 120px, 155px" : "(max-width: 768px) 112px, 140px"}
                 />
               </div>
             );
