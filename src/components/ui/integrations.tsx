@@ -50,11 +50,14 @@ export function IntegrationsCard({ className }: { className?: string }) {
                 <img
                   src={p.logo}
                   alt={p.name}
+                  width={isLastlink ? 155 : 140}
+                  height={isLastlink ? 60 : 48}
                   className={cn(
                     "object-contain",
                     isLastlink ? "max-h-[54px] md:max-h-[60px]" : "max-h-12 md:max-h-12"
                   )}
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             );

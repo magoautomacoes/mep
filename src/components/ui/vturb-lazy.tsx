@@ -15,23 +15,51 @@ const VturbLazy: React.FC<VturbLazyProps> = ({ playerId, scriptSrc, className, s
   const ref = React.useRef<HTMLDivElement | null>(null);
   const [initialized, setInitialized] = React.useState(false);
 
-  // Carrega o script do player imediatamente ao montar (mais robusto que lazy por viewport)
   React.useEffect(() => {
-    const alreadyLoaded = !!document.getElementById("vturb-smartplayer-js") || Array.from(document.scripts).some((s) => s.src === scriptSrc);
-    if (!alreadyLoaded) {
+    let loaded = false;
+    const load = () => {
+      if (loaded) return;
+      loaded = true;
+      const libLoaded = !!document.getElementById("vturb-smartplayer-js");
+      const playerLoaded = Array.from(document.scripts).some((s) => s.src === scriptSrc);
+      if (libLoaded || playerLoaded) {
+        setInitialized(true);
+        return;
+      }
       const s = document.createElement("script");
       s.src = scriptSrc;
       s.async = true;
       s.onload = () => setInitialized(true);
       document.head.appendChild(s);
+    };
+
+    const el = ref.current;
+    let io: IntersectionObserver | null = null;
+    if (el && "IntersectionObserver" in window) {
+      io = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((e) => e.isIntersecting)) {
+            load();
+            io && io.disconnect();
+          }
+        },
+        { rootMargin: "150px" }
+      );
+      io.observe(el);
     } else {
-      setInitialized(true);
+      const idle = (window as any).requestIdleCallback as undefined | ((cb: () => void, opts?: { timeout?: number }) => number);
+      if (idle) idle(load, { timeout: 5000 });
+      else setTimeout(load, 3000);
     }
+
+    return () => {
+      io && io.disconnect();
+    };
   }, [scriptSrc]);
 
   return (
     <div ref={ref} className={className} style={style} data-testid="vturb-container">
-      <div className={clsx("relative w-full aspect-[4/3] sm:aspect-video mx-auto isolate", frameClassName)}>
+      <div className={clsx("relative w-full aspect-video mx-auto", frameClassName)}>
         {/* O custom element ocupa todo o frame, garantindo proporção 16:9 */}
         <vturb-smartplayer
           id={playerId}

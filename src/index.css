@@ -121,15 +121,25 @@ All colors MUST be HSL.
   }
 
   .btn-primary {
-    @apply bg-primary text-primary-foreground hover:bg-secondary transition-all duration-300 shadow-lg hover:shadow-xl px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-base sm:text-lg;
+    @apply bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-base sm:text-lg will-change-transform transition-transform duration-300 hover:scale-[1.03];
   }
 
   .btn-champagne {
-    @apply bg-accent text-accent-foreground hover:bg-accent/80 transition-all duration-300 shadow-md hover:shadow-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-base sm:text-lg;
+    @apply bg-accent text-accent-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-base sm:text-lg will-change-transform transition-transform duration-300 hover:scale-[1.03];
   }
 
 .card-premium {
-  @apply bg-card rounded-xl md:rounded-2xl p-6 md:p-8 shadow-subtle hover:shadow-premium transition-all duration-300;
+  @apply bg-card rounded-xl md:rounded-2xl p-6 md:p-8 shadow-subtle will-change-transform transition-transform duration-300 hover:scale-[1.01];
+}
+
+.video-card {
+  transform: none;
+  will-change: auto;
+}
+
+vturb-smartplayer:fullscreen {
+  width: 100vw;
+  height: 100vh;
 }
 }
 
@@ -182,6 +192,18 @@ All colors MUST be HSL.
   animation-name: aurora-shift;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-aurora {
+    animation: none;
+  }
+  .animate-shiny-text {
+    animation: none;
+  }
+  .line-shadow-text::after {
+    animation: none;
+  }
 }
 
 /* Line shadow text effect */

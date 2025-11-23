@@ -41,7 +41,7 @@ const Index = () => {
                 {" "}que engaja e valoriza seu conteúdo.
               </p>
             </div>
-            <div className="card-premium border-2 border-border rounded-xl overflow-hidden shadow-sm px-0 sm:px-8 -mx-6 sm:mx-0">
+            <div className="card-premium video-card border-2 border-border rounded-xl overflow-hidden shadow-sm px-0 sm:px-8 -mx-6 sm:mx-0">
               <VturbLazy
                 playerId="vid-69139e76bd5d00c99be1793e"
                 scriptSrc="https://scripts.converteai.net/7b4fdf64-05e0-4e69-9e1d-b9778193a90f/players/69139e76bd5d00c99be1793e/v4/player.js"
@@ -406,12 +406,16 @@ const Index = () => {
       <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-primary text-primary-foreground text-center" style={{ contentVisibility: "auto", containIntrinsicSize: "700px" }}>
         <div className="section-container">
           <div className="max-w-4xl mx-auto px-6">
-            <img
-              src="https://s3.magoautomacoes.com.br/desing/metodoebookpremium/MEP%20LOGO%20(2).png"
-              alt="Método Ebook Premium"
-              loading="lazy" decoding="async"
-              className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto mx-auto mb-5 md:mb-6"
-            />
+            <picture>
+              <source srcSet="https://s3.magoautomacoes.com.br/desing/metodoebookpremium/MEP%20LOGO%20(2).webp" type="image/webp" />
+              <img
+                src="https://s3.magoautomacoes.com.br/desing/metodoebookpremium/MEP%20LOGO%20(2).png"
+                alt="Método Ebook Premium"
+                loading="lazy" decoding="async"
+                width="640" height="160"
+                className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto mx-auto mb-5 md:mb-6"
+              />
+            </picture>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 md:mb-8 leading-tight">
               Pronto para valorizar seu e‑book?
             </h2>

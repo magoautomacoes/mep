@@ -34,11 +34,14 @@ export const BeforeAfterCompare: React.FC<BeforeAfterCompareProps> = ({
   containerClassName,
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
+  const beforeVideoRef = React.useRef<HTMLVideoElement | null>(null);
+  const afterVideoRef = React.useRef<HTMLVideoElement | null>(null);
   const [pos, setPos] = React.useState(() => {
     const clamped = Math.min(Math.max(initialPosition, 0), 1);
     return clamped;
   });
   const [dragging, setDragging] = React.useState(false);
+  const [activated, setActivated] = React.useState(false);
 
   const updatePos = (clientX: number) => {
     if (!containerRef.current) return;
@@ -67,6 +70,36 @@ export const BeforeAfterCompare: React.FC<BeforeAfterCompareProps> = ({
 
   const handleLeft = `${Math.round(pos * 100)}%`;
 
+  React.useEffect(() => {
+    const el = containerRef.current;
+    let io: IntersectionObserver | null = null;
+    const activate = () => {
+      if (activated) return;
+      setActivated(true);
+      const a = afterVideoRef.current;
+      const b = beforeVideoRef.current;
+      a && a.play().catch(() => {});
+      b && b.play().catch(() => {});
+    };
+    if (el && "IntersectionObserver" in window) {
+      io = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((e) => e.isIntersecting)) {
+            activate();
+            io && io.disconnect();
+          }
+        },
+        { rootMargin: "300px" }
+      );
+      io.observe(el);
+    } else {
+      setTimeout(activate, 2000);
+    }
+    return () => {
+      io && io.disconnect();
+    };
+  }, [activated]);
+
   return (
     <div className={clsx("w-full", className)}>
       <div
@@ -85,9 +118,10 @@ export const BeforeAfterCompare: React.FC<BeforeAfterCompareProps> = ({
         {/* Base (Depois) */}
         {afterIsVideo ? (
           <video
+            ref={afterVideoRef}
             src={afterSrc}
             className="absolute inset-0 w-full h-full object-cover object-center"
-            autoPlay
+            preload={activated ? "metadata" : "none"}
             loop
             muted
             playsInline
@@ -109,9 +143,10 @@ export const BeforeAfterCompare: React.FC<BeforeAfterCompareProps> = ({
         >
           {beforeIsVideo ? (
             <video
+              ref={beforeVideoRef}
               src={beforeSrc}
               className="w-full h-full object-cover object-center"
-              autoPlay
+              preload={activated ? "metadata" : "none"}
               loop
               muted
               playsInline

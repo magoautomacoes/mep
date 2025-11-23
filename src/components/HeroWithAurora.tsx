@@ -22,12 +22,16 @@ export const HeroWithAurora = ({ onCTAClick }: HeroWithAuroraProps) => {
         className="relative grid justify-items-center max-w-4xl mx-auto px-6 py-12 md:py-20 text-center gap-y-4 sm:gap-y-5 md:gap-y-6"
       >
         <div className="inline-block text-center [isolation:isolate]">
-          <img
-            src="https://s3.magoautomacoes.com.br/desing/metodoebookpremium/MEP%20LOGO%20(1).png"
-            alt="Método Ebook Premium"
-            loading="lazy" decoding="async"
-            className="h-20 sm:h-28 md:h-36 lg:h-40 w-auto mx-auto"
-          />
+          <picture>
+            <source srcSet="https://s3.magoautomacoes.com.br/desing/metodoebookpremium/MEP%20LOGO%20(1).webp" type="image/webp" />
+            <img
+              src="https://s3.magoautomacoes.com.br/desing/metodoebookpremium/MEP%20LOGO%20(1).png"
+              alt="Método Ebook Premium"
+              loading="lazy" decoding="async"
+              width="640" height="160"
+              className="h-20 sm:h-28 md:h-36 lg:h-40 w-auto mx-auto"
+            />
+          </picture>
         </div>
 
         <div className="max-w-4xl mx-auto px-4 text-center">
