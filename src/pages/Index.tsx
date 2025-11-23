@@ -12,7 +12,7 @@ const FAQsLazy = lazy(() => import("@/components/ui/faqs"));
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import { AuroraText } from "@/components/ui/aurora-text";
 import { LineShadowText } from "@/components/ui/line-shadow-text";
-import VturbLazy from "@/components/ui/vturb-lazy";
+import VTurbVideo from "@/components/VTurbVideo";
 const IntegrationsCardLazy = lazy(() => import("@/components/ui/integrations"));
 
 const Index = () => {
@@ -29,7 +29,7 @@ const Index = () => {
       <HeroWithAurora onCTAClick={scrollToCTA} />
 
       {/* Seção de Vídeo (VTurb) redesenhada */}
-      <section className="py-16 sm:py-20 md:py-24 bg-muted/30" style={{ contentVisibility: "auto", containIntrinsicSize: "800px" }}>
+      <section className="py-16 sm:py-20 md:py-24 bg-muted/30" style={{ contentVisibility: "auto" }}>
         <div className="section-container">
           <div className="max-w-5xl mx-auto px-6">
             <div className="text-center mb-4 md:mb-5">
@@ -41,15 +41,11 @@ const Index = () => {
                 {" "}que engaja e valoriza seu conteúdo.
               </p>
             </div>
-            <div className="card-premium video-card border-2 border-border rounded-xl overflow-hidden shadow-sm px-0 sm:px-8 -mx-6 sm:mx-0">
-              <VturbLazy
-                playerId="vid-69139e76bd5d00c99be1793e"
-                scriptSrc="https://scripts.converteai.net/7b4fdf64-05e0-4e69-9e1d-b9778193a90f/players/69139e76bd5d00c99be1793e/v4/player.js"
-                className="w-full"
-                frameClassName="w-full sm:max-w-[760px] md:max-w-[960px] lg:max-w-[1200px] xl:max-w-[1360px]"
-                posterSrc="/placeholder.svg"
-              />
-            </div>
+            <VTurbVideo
+              accountId="7b4fdf64-05e0-4e69-9e1d-b9778193a90f"
+              playerId="69139e76bd5d00c99be1793e"
+              className="w-full"
+            />
             <div className="text-xs md:text-sm text-muted-foreground mt-3 text-center">Compatível com PC, Android e iOS.</div>
           </div>
         </div>
